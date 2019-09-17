@@ -64,7 +64,7 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
-    
+    $('.dinheiro').mask('#.##0,00', {reverse: true});
     
 
 })(jQuery);
