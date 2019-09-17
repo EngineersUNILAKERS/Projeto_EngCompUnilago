@@ -157,11 +157,11 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #a64bf4;
-  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  background: #800000;
+  background: -webkit-linear-gradient(45deg,  #800000, #FA8072);
+  background: -o-linear-gradient(45deg, #800000, #FA8072);
+  background: -moz-linear-gradient(45deg, #800000, #FA8072);
+  background: linear-gradient(45deg, #800000, #FA8072);
   
 }
 
@@ -280,8 +280,8 @@ textarea.input100 {
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-block;
+  flex-wrap: nowrap;
   justify-content: center;
   padding-top: 13px;
 }
@@ -296,16 +296,36 @@ textarea.input100 {
   margin: 0 auto;
 }
 
+.cadastrar{
+  text-align: center;
+  float: right;
+  width: 30%;
+  margin-top: 30px;
+  display: inline;
+}
+.cadastrar a:link{
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cadastrar a:hover{
+  color:#800000;
+}
+
+.cadastrar a:visited{
+  color:#800000;
+}
+
 .contact100-form-bgbtn {
   position: absolute;
   z-index: -1;
   width: 300%;
   height: 100%;
-  background: #a64bf4;
-  background: -webkit-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: -o-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: -moz-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: #800000;
+  background: -webkit-linear-gradient(left, #800000, #FA8072, #800000, #FA8072);
+  background: -o-linear-gradient(left, #800000, #FA8072, #800000, #FA8072);
+  background: -moz-linear-gradient(left, #800000, #FA8072, #800000, #FA8072);
+  background: linear-gradient(left, #800000, #FA8072, #800000, #FA8072);
   top: 0;
   left: -100%;
 
@@ -320,11 +340,11 @@ textarea.input100 {
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   padding: 0 20px;
-  width: 100%;
+  width: 40%;
   height: 50px;
 
   font-family: Poppins-Medium;
