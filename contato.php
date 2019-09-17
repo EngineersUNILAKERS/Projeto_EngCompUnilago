@@ -40,17 +40,6 @@ $msg = 0;
 <body>
 
 	
-	<?php
-
-	
-	include 'cabecalho.html';
-	include 'menu.php';
-	include 'conexao.php';
-	
-		
-	?>
-	
-	
 	 <?php if($msg == 'enviado'): ?>
           
           <center><h1> Mensagem enviada, agradecemos seu contato!</h1>
@@ -64,7 +53,7 @@ $msg = 0;
 	        <br>
             <br>
 	        <br>
-	<?php include 'rodape.html'; ?>
+	
 	
 	 <?php else: ?>
  
@@ -78,9 +67,9 @@ $msg = 0;
 
                 <div class="col-xl-8 offset-xl-2 py-5">
 
-                    <h1>Entre em contato com a Jove!</h1>
+                    <h1>Envio de email</h1>
 
-                    <p class="lead">Duvidas? Sugestões? Nos contate usando os campos abaixo:</p>
+                    <p class="lead">Escolha qual usuário você deseja enviar mensagem</p>
 
                     
 <form id="contact-form" method="POST" action="enviar.php" id="contato" enctype="multipart/form-data">
@@ -88,23 +77,7 @@ $msg = 0;
     <div class="messages"></div>
 
     <div class="controls">
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="nome">Nome *</label>
-                    <input id="nome" type="text" name="nome" class="form-control" placeholder="Seu nome *" required="required" data-error="É necessário escrever seu nome">
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="telefone">Telefone *</label>
-                    <input id="telefone" type="tel" name="telefone" class="form-control" placeholder="Telefone *" required="required" data-error="É necessário escrever seu telefone">
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-        </div>
+          
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -149,11 +122,6 @@ $msg = 0;
 	
 	
 </div>
-	<?php
-	
-	include 'rodape.html';
-	
-	?>
 	
        
 
