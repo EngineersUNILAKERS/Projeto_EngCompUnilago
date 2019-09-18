@@ -31,11 +31,11 @@ function db_connect()
      * ***/
     $mysql_dbname = "";
 
-    $mysql_hostname = 'databases.000webhost.com';
-    $mysql_username = 'id10869503_root';
-    $mysql_password = 'computacao2015';
-    $mysql_dbname= 'id10869503_web_dev';
-
+    $mysql_hostname = "https://db4free.net/phpMyAdmin/index.php";
+    $mysql_username = "dev_web2015";
+    $mysql_password = "computacao2015";
+    $mysql_dbname= "dev_web";
+  
     try {
         $dbh = new pdo("mysql:host=$mysql_hostname;dbname=$mysql_dbname", $mysql_username, $mysql_password);
         /*** $message = a message saying we have connected ***/
@@ -51,6 +51,7 @@ function db_connect()
         return null;
     }
 
+    
 }
 
 function checkLogin($user, $MD5_password)
@@ -87,3 +88,5 @@ function checkLogin($user, $MD5_password)
         return null;
     }
 }
+
+?>
