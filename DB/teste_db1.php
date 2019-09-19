@@ -3,6 +3,8 @@
 
 
 <?php
+
+
 //$mysql_hostname = 'databases-auth.000webhost.com';
 //    $mysql_username = 'id10869503_root';
 ///  $mysql_password = 'root123';
@@ -10,10 +12,10 @@
 // definições de host, database, usuário e senha
 $host = "localhost";
 $db   = "id10869503_web_dev";
-$user = "id10869503_root";
-$pass = "root123";
+$userdb = "id10869503_root";
+$passdb = "root123";
 // conecta ao banco de dados
-$con = mysql_pconnect($host, $user, $pass) or trigger_error(mysql_error(),E_USER_ERROR); 
+$con = mysql_pconnect($host, $userdb, $passdb) or trigger_error(mysql_error(),E_USER_ERROR); 
 // seleciona a base de dados em que vamos trabalhar
 mysql_select_db($db, $con);
 // cria a instrução SQL que vai selecionar os dados
@@ -24,8 +26,12 @@ $dados = mysql_query($query, $con) or die(mysql_error());
 $linha = mysql_fetch_assoc($dados);
 // calcula quantos dados retornaram
 $total = mysql_num_rows($dados);
+
+
+
 ?>
- 
+
+
 <html>
     <head>
     <title>Teste DB 1</title>
@@ -37,7 +43,7 @@ $total = mysql_num_rows($dados);
         // inicia o loop que vai mostrar todos os dados
         do {
 ?>
-            <p><?=$linha['user']?> / <?=$linha['email']?> / <?=$linha['id']?> /<?=$linha['groupId']?></p>
+              <p>Cliente: <?=$linha['user']?> / E-mail: <?=$linha['email']?> / ID: <?=$linha['id']?> / Grupo de Usuario: <?=$linha['groupId']?> / md5 do USUARIO: <?=$linha['password']?></p>
 <?php
         // finaliza o loop que vai mostrar os dados
         }while($linha = mysql_fetch_assoc($dados));
