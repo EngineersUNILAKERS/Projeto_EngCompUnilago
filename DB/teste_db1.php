@@ -37,7 +37,7 @@ $total = mysql_num_rows($dados);
         // inicia o loop que vai mostrar todos os dados
         do {
 ?>
-            <p><?=$linha['user']?> / <?=$linha['email']?> / <?$linha['id']?> /<?$linha['groupId']?></p>
+            <p><?=$linha['user']?> / <?=$linha['email']?> / <?=$linha['id']?> /<?=$linha['groupId']?></p>
 <?php
         // finaliza o loop que vai mostrar os dados
         }while($linha = mysql_fetch_assoc($dados));
