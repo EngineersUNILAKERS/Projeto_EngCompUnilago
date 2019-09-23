@@ -97,20 +97,35 @@ if ($conn->query($produtos) === TRUE) {
 
 
 
-//Populando a tabela juntamente com os adm
+//Populando a tabela de usuarios com users e adm
+$senhaPadrao = md5("teste");
 $insertUsers = "INSERT INTO  USERS(Id_Cli, Login, Nome, Email, Senha, Grupo_Id)
-VALUES(01,'adm','administrador','ENGCOMPLAKERS@GMAIL.COM','teste',2), 
+VALUES(01,'adm','administrador','ENGCOMPLAKERS@GMAIL.COM','$senhaPadrao',2), 
 
 
-(07,'Geraldo','Geraldo Zafalon','Geraldo@GMAIL.COM','teste',1),
-(08,'Marquinho','Marquinho Pokemon','MarquinhoPokemon@GMAIL.COM','teste',1),
-(09,'Casao','Casagrande','Casagrande@GMAIL.COM','teste',1),
-(10,'Enade','Enade Meninao','EnadeMeninao@GMAIL.COM','teste',1),
-(11,'usuario','USUARIO TESTE','ENG.COMPUTACAOUNILAGO@GMAIL.COM','teste',1)
+(07,'Geraldo','Geraldo Zafalon','Geraldo@GMAIL.COM','$senhaPadrao',1),
+(08,'Marquinho','Marquinho Pokemon','MarquinhoPokemon@GMAIL.COM','$senhaPadrao',1),
+(09,'Casao','Casagrande','Casagrande@GMAIL.COM','$senhaPadrao',1),
+(10,'Enade','Enade Meninao','EnadeMeninao@GMAIL.COM','$senhaPadrao',1),
+(11,'usuario','USUARIO TESTE','ENG.COMPUTACAOUNILAGO@GMAIL.COM','$senhaPadrao',1)
 ";
 // Retornando a mensagem de sucesso ou erro ao popular a tabela de usuários
 if ($conn->query($insertUsers) === TRUE) {
     echo 'Tabela de usuários populada com sucesso!<br>';
+  }
+  else {
+   echo 'Error: '. $conn->error;
+  }
+
+//Populando a tabela de usuarios com users e adm
+$insertUsers = "INSERT INTO  category(CAT_Id, CAT_Codigo, CAT_Nome, CAT_Descricao, PhotoQuant, MinimumStockLevel, CAT_Ativo)
+VALUES(01,'500','CURSOS','Cursos EAD',1,0,'1'), 
+(02,'501','SMARTFONES','Smartfones e periféricos',7,1,'0'),
+(03,'502','ELETRODOMESTICOS','Eletrodomésticos em geral para casa',7,1,'1'),
+(04,'503','SOFTWARES','Programas e apps para PCs',5,0,'1')";
+// Retornando a mensagem de sucesso ou erro ao popular a tabela de usuários
+if ($conn->query($insertUsers) === TRUE) {
+    echo 'Tabela de categoria populada com sucesso!<br>';
   }
   else {
    echo 'Error: '. $conn->error;
