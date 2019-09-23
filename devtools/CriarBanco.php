@@ -1,8 +1,13 @@
 <?php
-$nomeDoBanco ="englakersdb2";
+require('../config.php');
+
+$NomeDoServer=$GLOBALS['NomeDoServer'];
+$UserDoServer=$GLOBALS['UserDoServer'];
+$senha = $GLOBALS['senha'];
+$nomeDoBanco =$GLOBALS['nomeDoBanco'];
 
 // Conectando com o MySql Server(conexão sem o nome do banco de dados)
-$conn = new mysqli('localhost', 'root','');
+$conn = new mysqli($NomeDoServer, $UserDoServer, $senha);
 
 // Checando conexão
 if (mysqli_connect_errno()) {
@@ -21,7 +26,7 @@ else {
 
 $conn->close();
 // Conectando com o MySql Server para criar as tabelas no banco criado
-$conn = new mysqli('localhost', 'root','',$nomeDoBanco);
+$conn = new mysqli($NomeDoServer,$UserDoServer,$senha,$nomeDoBanco);
 
 // Checando conexão
 if (mysqli_connect_errno()) {
@@ -79,7 +84,7 @@ $produtos = "CREATE TABLE PRODUCTS (
 	PRO_Preco		FLOAT (5,2) NOT NULL,
 	PRO_Estoque		FLOAT (5,4) NOT NULL,
 	PRO_Ativo		VARCHAR (5) NOT NULL,
-    FOREIGN KEY (PRO_Categoria_Id) REFERENCES CATEGORY(CAT_Codigo)
+  FOREIGN KEY (PRO_Categoria_Id) REFERENCES CATEGORY(CAT_Codigo)
 )";
 // Retornando a mensagem de sucesso ou erro ao criar a tabela de produtos
 if ($conn->query($produtos) === TRUE) {
@@ -105,7 +110,7 @@ VALUES(01,'adm','administrador','ENGCOMPLAKERS@GMAIL.COM','teste',2),
 ";
 // Retornando a mensagem de sucesso ou erro ao popular a tabela de usuários
 if ($conn->query($insertUsers) === TRUE) {
-    echo 'Tabela de usuário populada com sucesso!<br>';
+    echo 'Tabela de usuários populada com sucesso!<br>';
   }
   else {
    echo 'Error: '. $conn->error;
