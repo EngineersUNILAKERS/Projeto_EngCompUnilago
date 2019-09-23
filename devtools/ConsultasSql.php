@@ -78,7 +78,6 @@ class ConsultasBanco
       foreach($listaNomes as $lista)
       {
         $nome[] = $lista['Nome'];
-            
       }
       return $nome;
     } 
@@ -98,8 +97,7 @@ class ConsultasBanco
       }
       foreach($listaNomes as $lista)
       {
-        $nome[] = $lista['Nome'];
-            
+        $nome[] = $lista['Nome']; 
       }
       return $nome;
     }   
@@ -120,13 +118,11 @@ class ConsultasBanco
       foreach($listaNomes as $lista)
       {
         $nome[] = $lista['Nome'];
-            
       }
       return $nome;
     } 
     public function ListaEmail()
     {
-    
       $ConsultasBanco = new ConsultasBanco;
 
       $sql="SELECT Email FROM USERS";
@@ -139,11 +135,49 @@ class ConsultasBanco
       }
       foreach($listaNomes as $lista)
       {
-        $email[] = $lista['Nome'];
-            
+        $email[] = $lista['Email'];   
       }
       return $email;
     } 
+    public function ListaCategorias()
+    {
+      $ConsultasBanco = new ConsultasBanco;
+
+      $sql="SELECT CAT_Nome, CAT_Codigo FROM category";
+      $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+      
+      
+      while($nome = mysqli_fetch_assoc($result))
+      {      
+      $listaNomes[] = $nome;
+      }
+      foreach($listaNomes as $lista)
+      {
+        $categoria[] = $lista['CAT_Nome'];
+        $categoria[] = $lista['CAT_Codigo'];   
+      }
+      return $categoria;
+    } 
+    public function Login()
+    {
+
+    //Quem for implementar o Login, olhe isso: https://www.devmedia.com.br/sistema-de-autenticacao-de-usuarios-em-php-usando-sessoes-e-mysql/37258
+    //   $ConsultasBanco = new ConsultasBanco;
+
+    //   $sql="SELECT CAT_Nome, CAT_Codigo FROM category";
+    //   $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+      
+      
+    //   while($nome = mysqli_fetch_assoc($result))
+    //   {      
+    //   $listaNomes[] = $nome;
+    //   }
+    //   foreach($listaNomes as $lista)
+    //   {
+    //     $categoria[] = $lista['CAT_Nome'];
+    //     $categoria[] = $lista['CAT_Codigo'];   
+    //   }
+      return null;
+    } 
 }
 
-  

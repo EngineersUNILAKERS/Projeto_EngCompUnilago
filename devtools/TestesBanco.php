@@ -36,6 +36,20 @@ foreach($nonAdm as $lista)
 {
     echo $lista."<br>";
 }
+echo "<p>Lista de todos Emails do site</p>";
+//Exemplo de como imprimir uma lista de todos emails
+$email = $ConsultasBanco->ListaEmail();
+foreach($email as $lista)
+{
+    echo $lista."<br>";
+}
+echo "<p>Lista de todas Categorias(códigos) do site</p>";
+//Exemplo de como imprimir uma lista de todas categorias
+$categoria = $ConsultasBanco->ListaCategorias();
+foreach($categoria as $lista)
+{
+    echo $lista."<br>";
+}
 
 
 
