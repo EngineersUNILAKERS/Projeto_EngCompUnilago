@@ -1,37 +1,30 @@
 <?php
 
 
-$nome= $_REQUEST['nome'];
-$fone= $_REQUEST['telefone'];
-$email= $_REQUEST['email'];
+
+$assunto= "Mensagem de UNILAKERS";
+$emailuser = $_REQUEST['email'];
 $msg= $_REQUEST['msg'];
-
-$assunto= $_REQUEST['assunto'];
-
-$opcao= $_REQUEST['opcao'];
-
+$email = "ENGCOMPLAKERS@GMAIL.COM";
            
                      
 
-           $corpo = "<strong>Mensagem de Lojista </strong><br><br>";
-           $corpo .= "<strong> Nome: </strong>$nome";
-           $corpo .= "<br><strong> Telefone: </strong>$fone";
-           $corpo .= "<br><strong> Email: </strong>$email";
+           $corpo = "<strong>Mensagem de UNILAKERS </strong><br><br>";
            $corpo .= "<br><strong> Mensagem: </strong>$msg";
            
-           $para= "comercial@joveportas.com.br";
-           $assunto.= " - Contato pelo Site";
+           $para = $emailuser;
+           $assunto= "Contato pelo Site";
            
 
             
            $header ="Content-Type: text/html; charset= utf-8\n";
-           $header .="From: $email Reply-to: $email\n";
+           $header .="De: $email Reply-to: $email\n";
            
            
           
 
 @mail($para, $assunto, $corpo, $header);           
 
-header("location:contato.php?msg=enviado");
+echo "email enviado com sucesso!"
 
 ?>
