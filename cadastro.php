@@ -1,5 +1,5 @@
 <?php 
-//teste banco
+
 require('../config.php');
 
 $con=mysqli_connect($NomeDoServer,$UserDoServer,$senha,$nomeDoBanco); 
