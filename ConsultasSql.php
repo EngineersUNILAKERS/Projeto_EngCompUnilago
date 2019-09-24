@@ -208,4 +208,36 @@ class ConsultasBanco
       return $listaNomes;
     }
 
+//select pra buscar informaçoes dos usuarios
+    Public function SelectUsuarios()
+    {
+      
+        $ConsultasBanco = new ConsultasBanco;
+
+        $sql=("SELECT * FROM USERS");
+        $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+
+        while($nome = mysqli_fetch_assoc($result))
+        {      
+        $listaNomes[] = $nome;
+        }
+        return $listaNomes;
+      
+
+      
+    }
+// pesquisar usuarios 
+    Public function PesquisarUsuarios()
+    {
+      $ConsultasBanco = new ConsultasBanco;
+
+      $sql=("SELECT * FROM USERS WHERE Nome LIKE '%$pesquisar%' LIMIT 5");
+      $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+
+      while($nome = mysqli_fetch_assoc($result))
+      {      
+      $listaNomes[] = $nome;
+      }
+      return $listaNomes;
+    }
 }

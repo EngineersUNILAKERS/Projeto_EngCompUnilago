@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Login</title>
+	<title>Controle</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -27,47 +28,30 @@
 </head>
 <body>
 
-
-	<div class="container-contact100">
-		<div class="wrap-contact100">
-			<form id ="Form" class="contact100-form validate-form">
-				<span class="contact100-form-title">
-					Bem Vindo!!
-				</span>
-
-				<div class="wrap-input100 validate-input" data-validate="Email é obrigatório">
-					<span class="label-input100">Email</span>
-					<input class="input100" type="text" name="name" placeholder="Entre com seu email" required>
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input">
-					<span class="label-input100">Senha</span>
-					<input class="input100" type="password" name="senha" placeholder="Entre com sua senha">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							<span>
-								ENTRAR
-							</span>
-						</button>
-					
-					
-					</div>
-				</div>
-				<div class="cadastrar">
-					<span>
-						<a href="login.html">Cadastrar</a>
-					</span>
-				</div>
-			</form>
-		</div>
-	</div>
-
+    <div class="container-contact100">
+	   <div class="wrap-contact100-form-btn">
+            <div class="contact100-form-bgbtn"></div>
+            <button class="contact100-form-btn">
+                <span><a href="Form_Products.html">
+                     Cadastrar Usuário:
+                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                </a></span>
+            </button>
+		    </div>
+			<div><button class="contact100-form-btn">
+                <span><a href="Mostrat_Usu.php">
+                     Consultar Usuário:
+                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                </a></span>
+            </button>
+		    </div>
+		<form method="POST" action="pesquisar_Usu.php">
+          Pesquisar:<input type="text" name="pesquisar" placeholder="PESQUISAR">
+          <input type="submit" value="ENVIAR">
+        </form>
+	 
+    
+    
 
 
 	<div id="dropDownSelect1"></div>
