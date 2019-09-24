@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,6 +27,7 @@
 <!--===============================================================================================-->
 </head>
 <body>
+
     <div class="container-contact100">
 	   <div class="wrap-contact100-form-btn">
             <div class="contact100-form-bgbtn"></div>
@@ -35,14 +37,26 @@
                     <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
                 </a></span>
             </button>
-            
-        </div>
-      
-    <div id="pesquisar">
+		</div>
+		<div id="pesquisar">
         <input type="text" id="txtBusca" placeholder="Buscar..."/>
         <button class="contact100-form-btn">BUSCAR</button></div>
-     
-    </div>
+      
+	 <div>
+		 <?php
+		 require('ConsultasSql.php');
+		 $ConsultasBanco = new ConsultasBanco;
+  		 $categoria = $ConsultasBanco->SelectProd();
+		 foreach($categoria as $lista)
+		  {
+			  ?>		 
+	        <div><h1><?php echo $lista ['PRO_Nome']?></h1></div>
+			<div><h4><?php echo $lista ['PRO_Descricao']?></h4></div>
+			<br><br>
+		  <?php }?>
+	</div>
+    
+    
 
 
 	<div id="dropDownSelect1"></div>

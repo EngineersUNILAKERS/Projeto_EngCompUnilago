@@ -1,6 +1,6 @@
 <?php
 require('../config.php');
-require('ConsultasSql.php');
+require('../ConsultasSql.php');
 
 $ConsultasBanco = new ConsultasBanco;
 //Exemplo de select 
@@ -50,8 +50,13 @@ foreach($categoria as $lista)
 {
     echo $lista."<br>";
 }
-
-
+echo "<p>Lista de todos Produtos do site</p>";
+//Exemplo de como imprimir todos produtos 
+$categoria = $ConsultasBanco->SelectProd();
+foreach($categoria as $lista)
+ {
+     echo $lista['PRO_Nome'].' '.$lista['PRO_Codigo'].'<br>';
+ }
 
 
 
