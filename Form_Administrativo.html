@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Login</title>
+	<title>Form_Administrativo</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -22,58 +22,73 @@
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
 <!--===============================================================================================-->
 </head>
 <body>
 
-
+    <form name="Form_Administrativo" method="post" enctype="multipart/form-data" action="Form_Administrativo.php">
+        
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="login.php" method="post">
+			<form class="contact100-form validate-form">
 				<span class="contact100-form-title">
-					Bem Vindo!!
+					Adminsitração de Usuários:
 				</span>
 
-				<div class="wrap-input100 validate-input" data-validate = "É obrigatório um email válido: ex@abc.xyz">
-					<span class="label-input100">Email</span>
-					<input class="input100" type="text" name="email" placeholder="Entre com seu email" required>
+				<div class="wrap-input100 validate-input" data-validate="Codigo é obrigatório">
+					<span id=Id_Cli class="label-input100">Id</span>
+					<input class="input100" type="text" name="Id_Cli" placeholder="Insira o Id do Usuário">
+					<span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Nome do Usuário é obrigatório">
+					<span id=Nome class="label-input100">Nome do Usuário</span>
+					<input class="input100" type="text" name="Nome" placeholder="Insira o Nome do Usuario">
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate="Nome é obrigatório">
-					<span class="label-input100">Senha</span>
-					<input class="input100" type="password" name="senha" placeholder="Entre com sua senha" required>
+				<div class="wrap-input100 validate-input">
+					<span id=Login class="label-input100">Login</span>
+					<input class="input100" type="text" name="Login" placeholder="Informe o Login">
 					<span class="focus-input100"></span>
 				</div>
+				<div class="wrap-input100 validate-input" data-validate="Email é obrigatoria">
+					<span id=Email class="label-input100">Email</span>
+					<input class="input100" type="text" name="Email" placeholder="Informe o E-mail">
+					<span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Grupo é obrigatoria">
+                        <span id=Grupo_Id class="label-input100">Grupo_Id</span>
+                        <input class="input100" type="text" name="Grupo_Id" placeholder="Informe o grupo do usuário">
+                        <span class="focus-input100"></span>
+                </div>
+             
+				
 
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn" type="submit">
+						<button class="contact100-form-btn">
 							<span>
-								ENTRAR
+								Cadastrar
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 							</span>
 						</button>
-					
-					
 					</div>
-				</div>
-				<div class="cadastrar">
-					<span>
-						<a href="login.html">Cadastrar</a>
-					</span>
 				</div>
 			</form>
 		</div>
 	</div>
-
+    </form>
 
 
 	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script> 
 <!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->

@@ -1,37 +1,30 @@
 <?php 
 
-require('../config.php');
-$user = $_POST['usuario'];
-$MD5_password = MD5($_POST['senha']);
-$email = $_POST['email'];
-$query_select = "SELECT email FROM usuarios WHERE user = '$email";
-$select = mysql_query($query_select,$connect);
-$array = mysql_fetch_array($select);
-$logarray = $array['email'];
- 
-  
- 
+require('ConsultasSql.php');
+$ConsultasBanco = new ConsultasBanco();
+$ConsultasBanco->Conectarbanco();
+
+$Usuario=$_POST['usuario'];
+$Email=$_POST['email'];
+$Senha=MD5($_POST['senha']);
+
+
+
+/*$result = ("SELECT * FROM users WHERE Nome = '$Usuario' AND Senha = '$Senha'");
+
+if(($result) > 0 )
+{
+    echo 'Usuário já existe';
+
+}*/
+/*else{*/
+    $sql = "INSERT INTO users(Nome, Senha, Email) VALUES ('$Usuario', '$Email', '$Senha')";
     
-      if($logarray == $email){
- 
-        echo"<script language='javascript' type='text/javascript'>
-        alert('Esse email já existe');window.location.href='
-        cadastro.html';</script>";
-        die();
- 
-      }else{
-        $query = "INSERT INTO usuarios (user,password,email) VALUES ('$user','$password',$email)";
-        $insert = mysql_query($query,$connect);
-         
-        if($insert){
-          echo"<script language='javascript' type='text/javascript'>
-          alert('Usuário cadastrado com sucesso!');window.location.
-          href='login.html'</script>";
-        }else{
-          echo"<script language='javascript' type='text/javascript'>
-          alert('Não foi possível cadastrar esse usuário');window.location
-          .href='cadastro.html'</script>";
-        }
-      }
-    
+	if ($ConsultasBanco->ConectarBanco()->query($sql) === TRUE) {
+		echo 'Usuario criado com sucesso!<br>';
+	  }
+	  else {
+	   echo 'Error: '. $ConsultasBanco->ConectarBanco()->error;
+	  }
+/*}*/
 ?>
