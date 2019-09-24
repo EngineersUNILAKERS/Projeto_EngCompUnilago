@@ -38,7 +38,7 @@ $usuarios = "CREATE TABLE USERS(
 	Login 		VARCHAR (50) PRIMARY KEY NOT NULL, 
 	Nome 		VARCHAR (50) NOT NULL,
 	Email		VARCHAR (50)NOT NULL,
-	Senha		VARCHAR	(8),
+	Senha		VARCHAR	(100),
 	Grupo_Id	INT NOT NULL
 )";
 // Retornando a mensagem de sucesso ou erro ao criar a tabela de usuários
