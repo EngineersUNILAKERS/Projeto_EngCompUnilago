@@ -30,7 +30,7 @@ $(document).ready(function(){
 			},
 			senha : {
 				required : 'Informe a sua senha.',
-				minlength : 'A senha deve ter, no mínimo, 3 caracteres.',
+				minlength : 'A senha deve ter, no mínimo, 8 caracteres.',
 				maxlength : 'A senha deve ter, no máximo, 20 caracteres.'
 			},
 			conf_senha : {
