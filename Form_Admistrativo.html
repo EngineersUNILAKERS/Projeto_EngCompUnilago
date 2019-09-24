@@ -28,7 +28,7 @@
 </head>
 <body>
 
-    <form name="Form_Products" method="post" enctype="multipart/form-data" action="Form_Products.php">
+    <form name="Form_Products" method="post" enctype="multipart/form-data" action="Form_Administrativo.php">
         
 	<div class="container-contact100">
 		<div class="wrap-contact100">
@@ -38,42 +38,33 @@
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Codigo é obrigatório">
-					<span id=codigo class="label-input100">Código</span>
-					<input class="input100" type="text" name="codigo" placeholder="Insira o Código do Produto">
+					<span id=Id_Cli class="label-input100">Id</span>
+					<input class="input100" type="text" name="Id_Cli" placeholder="Insira o Id do Usuário">
 					<span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Nome do Produto é obrigatório">
-					<span id=Nome_Produto class="label-input100">Nome do Produto</span>
-					<input class="input100" type="text" name="Nome_Produto" placeholder="Insira o Nome do Produto">
+					<span id=Nome class="label-input100">Nome do Usuário</span>
+					<input class="input100" type="text" name="Nome" placeholder="Insira o Nome do Usuario">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input">
-					<span id=descricao class="label-input100">Descrição</span>
-					<input class="input100" type="text" name="descricao" placeholder="Informe a descrição">
+					<span id=Login class="label-input100">Login</span>
+					<input class="input100" type="text" name="Login" placeholder="Informe o Login">
 					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 validate-input" data-validate="Categoria é obrigatoria">
-					<span id=categoria class="label-input100">Categoria</span>
-					<input class="input100" type="text" name="categoria" placeholder="Informe a Categoria">
+					<span id=Email class="label-input100">Email</span>
+					<input class="input100" type="text" name="Email" placeholder="Informe o E-mail">
 					<span class="focus-input100"></span>
                 </div>
-                <div class="wrap-input100 validate-input" data-validate="A foto é obrigatoria">
-					<span id=foto class="label-input100">Foto Produto</span>
-					<input class="input100" type="file" name="foto">
-					<span class="focus-input100"></span>
+                <div class="wrap-input100 validate-input" data-validate="Categoria é obrigatoria">
+                        <span id=Grupo_Id class="label-input100">Grupo_id</span>
+                        <input class="input100" type="text" name="Grupo_Id" placeholder="Informe o grupo do usuário">
+                        <span class="focus-input100"></span>
                 </div>
-                <div class="wrap-input100 validate-input" data-validate="Preço é obrigatorio">
-                    <span class="label-input100">Preço</span>
-                    <label for="dinheiro">R$</label><input type="text" id="dinheiro" name="dinheiro" 
-                    class="dinheiro form-control" style="display:inline-block" placeholder="0,00" />
-                </div>
-                <div class="wrap-input100 validate-input">
-					<span id=Qtd_Estoque class="label-input100">Quantidade em Estoque</span>
-					<input class="input100" type="number" name="Qtd_Estoque">
-					<span class="focus-input100"></span>
-				</div>
+             
 				
 
 				<div class="container-contact100-form-btn">
