@@ -1,10 +1,8 @@
 <?php
-SelectProd(1);
-require('devtools/ConsultasSql.php');
-$linha = mysql_fetch_assoc($result);
-// calcula quantos dados retornaram
-$total = mysql_num_rows($result);
 
+require('devtools/ConsultasSql.php');
+$ConsultasBanco = new ConsultasBanco;
+echo $ConsultasBanco->SelectProd();
 ?>
 
 
@@ -47,22 +45,8 @@ $total = mysql_num_rows($result);
             </button>
             
 		</div>
-		<?php
-    // se o número de resultados for maior que zero, mostra os dados
-    if($total > 0) {
-        // inicia o loop que vai mostrar todos os dados
-        do {
-?>
-			<p><?=$linha['PRO_Nome']?> / <?=$linha['PRO_Descricao']?></p>
-			<p><?=$linha['PRO_Codigo']?> / <?=$linha['PRO_Foto']?></p>
-			<p><?=$linha['PRO_Preco']?> / <?=$linha['PRO_Estoque']?></p>
-<?php
-        // finaliza o loop que vai mostrar os dados
-        }while($linha = mysql_fetch_assoc($dados));
-    // fim do if 
-    }
-?>
-      
+		 
+    
     <div id="pesquisar">
         <input type="text" id="txtBusca" placeholder="Buscar..."/>
         <button class="contact100-form-btn">BUSCAR</button></div>
