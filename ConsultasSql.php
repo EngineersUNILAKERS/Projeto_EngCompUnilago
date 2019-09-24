@@ -158,27 +158,7 @@ class ConsultasBanco
       }
       return $categoria;
     } 
-    public function Login()
-    {
 
-    //Quem for implementar o Login, olhe isso: https://www.devmedia.com.br/sistema-de-autenticacao-de-usuarios-em-php-usando-sessoes-e-mysql/37258
-    //   $ConsultasBanco = new ConsultasBanco;
-
-    //   $sql="SELECT CAT_Nome, CAT_Codigo FROM category";
-    //   $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
-      
-      
-    //   while($nome = mysqli_fetch_assoc($result))
-    //   {      
-    //   $listaNomes[] = $nome;
-    //   }
-    //   foreach($listaNomes as $lista)
-    //   {
-    //     $categoria[] = $lista['CAT_Nome'];
-    //     $categoria[] = $lista['CAT_Codigo'];   
-    //   }
-      return null;
-    } 
     public function SelectProd()
     {
     
