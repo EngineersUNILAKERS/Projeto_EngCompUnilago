@@ -30,16 +30,10 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" action="login.php" method="post">
 				<span class="contact100-form-title">
 					Bem Vindo!!
 				</span>
-
-				<div class="wrap-input100 validate-input" data-validate="Nome é obrigatório">
-					<span class="label-input100">Nome</span>
-					<input class="input100" type="text" name="name" placeholder="Entre com seu nome" required>
-					<span class="focus-input100"></span>
-				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "É obrigatório um email válido: ex@abc.xyz">
 					<span class="label-input100">Email</span>
@@ -47,10 +41,16 @@
 					<span class="focus-input100"></span>
 				</div>
 
+				<div class="wrap-input100 validate-input" data-validate="Nome é obrigatório">
+					<span class="label-input100">Senha</span>
+					<input class="input100" type="password" name="senha" placeholder="Entre com sua senha" required>
+					<span class="focus-input100"></span>
+				</div>
+
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
+						<button class="contact100-form-btn" type="submit">
 							<span>
 								ENTRAR
 							</span>
