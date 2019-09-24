@@ -30,7 +30,7 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form id="Form" method="POST" action="">
 				<span class="contact100-form-title">
 					Bem Vindo!!
 				</span>
@@ -52,8 +52,8 @@
 					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 validate-input" data-validate="Senha é obrigatoria">
-					<span id=senha class="label-input100">Confirme sua Senha</span>
-					<input class="input100" type="password" name="senha" placeholder="Confirme sua senha">
+					<span id=conf_senha class="label-input100">Confirme sua Senha</span>
+					<input class="input100" type="password" name="conf_senha" placeholder="Confirme sua senha">
 					<span class="focus-input100"></span>
 				</div>
 
@@ -85,6 +85,10 @@
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
+	<script src="jquery-2.1.4.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 	<script>
 		$(".selection-2").select2({
 			minimumResultsForSearch: 20,
@@ -98,6 +102,7 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="js/validarform.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
