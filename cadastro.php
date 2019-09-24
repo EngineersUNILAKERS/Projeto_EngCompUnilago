@@ -4,7 +4,7 @@ require('../config.php');
 $user = $_POST['usuario'];
 $MD5_password = MD5($_POST['senha']);
 $email = $_POST['email'];
-$query_select = "SELECT user FROM usuarios WHERE user = '$user'";
+$query_select = "SELECT email FROM usuarios WHERE user = '$email";
 $select = mysql_query($query_select,$connect);
 $array = mysql_fetch_array($select);
 $logarray = $array['email'];
