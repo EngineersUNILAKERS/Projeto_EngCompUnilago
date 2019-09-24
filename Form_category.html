@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Produtos</title>
+	<title>Form_Category</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -22,33 +22,77 @@
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
 <!--===============================================================================================-->
 </head>
 <body>
-    <div class="container-contact100">
-	   <div class="wrap-contact100-form-btn">
-            <div class="contact100-form-bgbtn"></div>
-            <button class="contact100-form-btn">
-                <span><a href="Form_Products.html">
-                     CADASTRAR NOVOS PRODUTOS
-                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                </a></span>
-            </button>
-            
-        </div>
-      
-    <div id="pesquisar">
-        <input type="text" id="txtBusca" placeholder="Buscar..."/>
-        <button class="contact100-form-btn">BUSCAR</button></div>
-     
-    </div>
+
+    <form name="Form_Category" method="post" enctype="multipart/form-data" action="Form_Category.php">
+        
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Cadastre seu Categoria:
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Codigo é obrigatório">
+					<span id=codigo class="label-input100">Código</span>
+					<input class="input100" type="text" name="codigo" placeholder="Insira o Código da Categoria">
+					<span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Nome da Categoria é obrigatório">
+					<span id=Nome_Categoria class="label-input100">Nome do Categoria</span>
+					<input class="input100" type="text" name="Nome_Categoria" placeholder="Insira o Nome do Categoria">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input">
+					<span id=descricao class="label-input100">Descrição</span>
+					<input class="input100" type="text" name="descricao" placeholder="Informe a descrição">
+					<span class="focus-input100"></span>
+				</div>
+                <div class="wrap-input100 validate-input" data-validate="A foto é obrigatoria">
+					<span id=foto class="label-input100">Foto Categoria</span>
+					<input class="input100" type="file" name="foto">
+					<span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Preço é obrigatorio">
+                    <span class="label-input100">Preço</span>
+                    <label for="dinheiro">R$</label><input type="text" id="dinheiro" name="dinheiro" 
+                    class="dinheiro form-control" style="display:inline-block" placeholder="0,00" />
+                </div>
+                <div class="wrap-input100 validate-input">
+					<span id=Qtd_Estoque class="label-input100">Quantidade em Estoque</span>
+					<input class="input100" type="number" name="Qtd_Estoque">
+					<span class="focus-input100"></span>
+				</div>
+				
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							<span>
+								Cadastrar
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+    </form>
 
 
 	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script> 
 <!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->

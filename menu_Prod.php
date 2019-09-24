@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Login</title>
+	<title>Produtos</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -27,51 +28,35 @@
 </head>
 <body>
 
-
-	<div class="container-contact100">
-		<div class="wrap-contact100">
-			<form id="Form" method="POST" action="">
-				<span class="contact100-form-title">
-					Bem Vindo!!
-				</span>
-
-				<div class="wrap-input100 validate-input" data-validate="Nome é obrigatório">
-					<span id=user class="label-input100">User</span>
-					<input class="input100" type="text" name="name" placeholder="Entre com seu usuário">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input" data-validate = "É obrigatório um email válido: ex@abc.xyz">
-					<span class="label-input100">Email</span>
-					<input class="input100" type="text" name="email" placeholder="Entre com seu email">
-					<span class="focus-input100"></span>
-				</div>
-				<div class="wrap-input100 validate-input" data-validate="Senha é obrigatoria">
-					<span id=senha class="label-input100">Senha</span>
-					<input class="input100" type="password" name="senha" placeholder="Digite sua senha">
-					<span class="focus-input100"></span>
-				</div>
-				<div class="wrap-input100 validate-input" data-validate="Senha é obrigatoria">
-					<span id=conf_senha class="label-input100">Confirme sua Senha</span>
-					<input class="input100" type="password" name="conf_senha" placeholder="Confirme sua senha">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							<span>
-								Cadastrar
-								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</span>
-						</button>
-					</div>
-				</div>
-			</form>
+    <div class="container-contact100">
+	   <div class="wrap-contact100-form-btn">
+            <div class="contact100-form-bgbtn"></div>
+            <button class="contact100-form-btn">
+                <span><a href="Form_Products.html">
+                     CADASTRAR NOVOS PRODUTOS
+                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                </a></span>
+            </button>
 		</div>
+		<div id="pesquisar">
+        <input type="text" id="txtBusca" placeholder="Buscar..."/>
+        <button class="contact100-form-btn">BUSCAR</button></div>
+      
+	 <div>
+		 <?php
+		 require('ConsultasSql.php');
+		 $ConsultasBanco = new ConsultasBanco;
+  		 $categoria = $ConsultasBanco->SelectProd();
+		 foreach($categoria as $lista)
+		  {
+			  ?>		 
+	        <div><h1><?php echo $lista ['PRO_Nome']?></h1></div>
+			<div><h4><?php echo $lista ['PRO_Descricao']?></h4></div>
+			<br><br>
+		  <?php }?>
 	</div>
-
+    
+    
 
 
 	<div id="dropDownSelect1"></div>
@@ -85,10 +70,6 @@
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
-	<script src="jquery-2.1.4.min.js"></script>
-	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 	<script>
 		$(".selection-2").select2({
 			minimumResultsForSearch: 20,
@@ -102,7 +83,6 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-	<script src="js/validarform.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
