@@ -32,14 +32,14 @@
 	   <div class="wrap-contact100-form-btn">
             <div class="contact100-form-bgbtn"></div>
             <button class="contact100-form-btn">
-                <span><a href="Form_Products.html">
+                <span><a href="Form_Adminsitrativo.html">
                      Cadastrar Usuário:
                     <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
                 </a></span>
             </button>
 		    </div>
 			<div><button class="contact100-form-btn">
-                <span><a href="Mostrat_Usu.php">
+                <span><a href="Mostrar_Usu.php">
                      Consultar Usuário:
                     <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
                 </a></span>
