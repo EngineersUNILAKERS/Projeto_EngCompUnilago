@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Login</title>
+	<title>Form_Category</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -22,40 +22,54 @@
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
 <!--===============================================================================================-->
 </head>
 <body>
 
-
+    <form name="Form_Category" method="post" enctype="multipart/form-data" action="Form_Category.php">
+        
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form id="Form" method="POST" action="">
+			<form class="contact100-form validate-form">
 				<span class="contact100-form-title">
-					Bem Vindo!!
+					Cadastre seu Categoria:
 				</span>
 
-				<div class="wrap-input100 validate-input" data-validate="Nome é obrigatório">
-					<span id=user class="label-input100">User</span>
-					<input class="input100" type="text" name="name" placeholder="Entre com seu usuário">
+				<div class="wrap-input100 validate-input" data-validate="Codigo é obrigatório">
+					<span id=codigo class="label-input100">Código</span>
+					<input class="input100" type="text" name="codigo" placeholder="Insira o Código da Categoria">
+					<span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Nome da Categoria é obrigatório">
+					<span id=Nome_Categoria class="label-input100">Nome do Categoria</span>
+					<input class="input100" type="text" name="Nome_Categoria" placeholder="Insira o Nome do Categoria">
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "É obrigatório um email válido: ex@abc.xyz">
-					<span class="label-input100">Email</span>
-					<input class="input100" type="text" name="email" placeholder="Entre com seu email">
+				<div class="wrap-input100 validate-input">
+					<span id=descricao class="label-input100">Descrição</span>
+					<input class="input100" type="text" name="descricao" placeholder="Informe a descrição">
 					<span class="focus-input100"></span>
 				</div>
-				<div class="wrap-input100 validate-input" data-validate="Senha é obrigatoria">
-					<span id=senha class="label-input100">Senha</span>
-					<input class="input100" type="password" name="senha" placeholder="Digite sua senha">
+                <div class="wrap-input100 validate-input" data-validate="A foto é obrigatoria">
+					<span id=foto class="label-input100">Foto Categoria</span>
+					<input class="input100" type="file" name="foto">
+					<span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Preço é obrigatorio">
+                    <span class="label-input100">Preço</span>
+                    <label for="dinheiro">R$</label><input type="text" id="dinheiro" name="dinheiro" 
+                    class="dinheiro form-control" style="display:inline-block" placeholder="0,00" />
+                </div>
+                <div class="wrap-input100 validate-input">
+					<span id=Qtd_Estoque class="label-input100">Quantidade em Estoque</span>
+					<input class="input100" type="number" name="Qtd_Estoque">
 					<span class="focus-input100"></span>
 				</div>
-				<div class="wrap-input100 validate-input" data-validate="Senha é obrigatoria">
-					<span id=conf_senha class="label-input100">Confirme sua Senha</span>
-					<input class="input100" type="password" name="conf_senha" placeholder="Confirme sua senha">
-					<span class="focus-input100"></span>
-				</div>
+				
 
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
@@ -71,13 +85,14 @@
 			</form>
 		</div>
 	</div>
-
+    </form>
 
 
 	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script> 
 <!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
@@ -85,10 +100,6 @@
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
-	<script src="jquery-2.1.4.min.js"></script>
-	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 	<script>
 		$(".selection-2").select2({
 			minimumResultsForSearch: 20,
@@ -102,7 +113,6 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-	<script src="js/validarform.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
