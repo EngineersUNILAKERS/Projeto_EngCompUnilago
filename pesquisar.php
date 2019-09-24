@@ -1,14 +1,14 @@
 <?php
-  require('devtools/ConsultasSql.php');
-
+  require('ConsultasSql.php');
   $ConsultasBanco = new ConsultasBanco;
-
     $pesquisar = $_POST['pesquisar'];
-    $result_produtos = "SELECT * FROM products WHERE PRO_Nome LIKE '%$pesquisar%' LIMIT 5";
-    $resultado_produtos = mysqli_query($conn, $result_produtos);
+    $dadopesquisado = $ConsultasBanco->PesquisaProd($pesquisar);
     
-    while($rows_produtos = mysqli_fetch_array($resultado_produos)){
-        echo "Nome do produto: ".$rows_produtos['PRO_Nome']."<br>";
+    foreach($dadopesquisado as $lista)
+    {
+        echo "Nome do produto: ".$lista['PRO_Nome']."<br>";
+        echo "Descricao: ".$lista['PRO_Descricao']."<br>";
+        echo "Preço R$: ".$lista['PRO_Preco']."<br>";
     }
 ?>
 

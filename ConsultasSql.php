@@ -193,5 +193,19 @@ class ConsultasBanco
       }
       return $listaNomes;
     }
+    public function PesquisaProd($pesquisar)
+    {
+    
+      $ConsultasBanco = new ConsultasBanco;
+
+      $sql=("SELECT * FROM products WHERE PRO_Nome LIKE '%$pesquisar%' LIMIT 5");
+      $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+
+      while($nome = mysqli_fetch_assoc($result))
+      {      
+      $listaNomes[] = $nome;
+      }
+      return $listaNomes;
+    }
 
 }
