@@ -4,7 +4,7 @@ class ConsultasBanco
 {
     public function ConectarBanco()
     {
-      require('../config.php');
+      require('config.php');
 
       $NomeDoServer=$GLOBALS['NomeDoServer'];
       $UserDoServer=$GLOBALS['UserDoServer'];

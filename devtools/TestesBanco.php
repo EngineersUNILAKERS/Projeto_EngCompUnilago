@@ -1,6 +1,6 @@
 <?php
 require('../config.php');
-require('ConsultasSql.php');
+require('../ConsultasSql.php');
 
 $ConsultasBanco = new ConsultasBanco;
 //Exemplo de select 

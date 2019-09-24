@@ -1,6 +1,6 @@
 <?php
 
-require('devtools/ConsultasSql.php');
+require('ConsultasSql.php');
 
 $ConsultasBanco = new ConsultasBanco;
 

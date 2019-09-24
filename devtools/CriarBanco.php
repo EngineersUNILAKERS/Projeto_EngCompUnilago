@@ -34,8 +34,8 @@ if (mysqli_connect_errno()) {
 }
 //Criando as tabelas de usuários
 $usuarios = "CREATE TABLE USERS(
-	Id_Cli		INT NOT NULL,
-	Login 		VARCHAR (50) PRIMARY KEY NOT NULL, 
+	Id_Cli		INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	Login 		VARCHAR (50)  NOT NULL, 
 	Nome 		VARCHAR (50) NOT NULL,
 	Email		VARCHAR (50)NOT NULL,
 	Senha		VARCHAR	(100),
@@ -54,8 +54,7 @@ if ($conn->query($usuarios) === TRUE) {
 
 //Criando as tabelas de categorias
 $categorias = "CREATE TABLE CATEGORY (
-	CAT_Id			INT NOT NULL,
-	CAT_Codigo 		INT PRIMARY KEY NOT NULL,
+	CAT_Id			INT  PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	CAT_Nome		VARCHAR (50) NOT NULL,
 	CAT_Descricao		VARCHAR (300) NOT NULL,
 	PhotoQuant       	INT NOT NULL,
@@ -75,7 +74,7 @@ if ($conn->query($categorias) === TRUE) {
 
 //Criando as tabelas de produtos
 $produtos = "CREATE TABLE PRODUCTS (
-	PRO_Id			INT PRIMARY KEY NOT NULL,
+	PRO_Id			INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	PRO_Codigo 		INT NOT NULL,
 	PRO_Nome		VARCHAR (50) NOT NULL,
 	PRO_Descricao		VARCHAR (300) NOT NULL,
@@ -84,7 +83,7 @@ $produtos = "CREATE TABLE PRODUCTS (
 	PRO_Preco		FLOAT (5,2) NOT NULL,
 	PRO_Estoque		FLOAT (5,4) NOT NULL,
 	PRO_Ativo		VARCHAR (5) NOT NULL,
-  FOREIGN KEY (PRO_Categoria_Id) REFERENCES CATEGORY(CAT_Codigo)
+  FOREIGN KEY (PRO_Categoria_Id) REFERENCES CATEGORY(CAT_Id)
 )";
 // Retornando a mensagem de sucesso ou erro ao criar a tabela de produtos
 if ($conn->query($produtos) === TRUE) {
@@ -99,15 +98,15 @@ if ($conn->query($produtos) === TRUE) {
 
 //Populando a tabela de usuarios com users e adm
 $senhaPadrao = md5("teste");
-$insertUsers = "INSERT INTO  USERS(Id_Cli, Login, Nome, Email, Senha, Grupo_Id)
-VALUES(01,'adm','administrador','ENGCOMPLAKERS@GMAIL.COM','$senhaPadrao',2), 
+$insertUsers = "INSERT INTO  USERS(Login, Nome, Email, Senha, Grupo_Id)
+VALUES('adm','administrador','ENGCOMPLAKERS@GMAIL.COM','$senhaPadrao',2), 
 
 
-(07,'Geraldo','Geraldo Zafalon','Geraldo@GMAIL.COM','$senhaPadrao',1),
-(08,'Marquinho','Marquinho Pokemon','MarquinhoPokemon@GMAIL.COM','$senhaPadrao',1),
-(09,'Casao','Casagrande','Casagrande@GMAIL.COM','$senhaPadrao',1),
-(10,'Enade','Enade Meninao','EnadeMeninao@GMAIL.COM','$senhaPadrao',1),
-(11,'usuario','USUARIO TESTE','ENG.COMPUTACAOUNILAGO@GMAIL.COM','$senhaPadrao',1)
+('Geraldo','Geraldo Zafalon','Geraldo@GMAIL.COM','$senhaPadrao',1),
+('Marquinho','Marquinho Pokemon','MarquinhoPokemon@GMAIL.COM','$senhaPadrao',1),
+('Casao','Casagrande','Casagrande@GMAIL.COM','$senhaPadrao',1),
+('Enade','Enade Meninao','EnadeMeninao@GMAIL.COM','$senhaPadrao',1),
+('usuario','USUARIO TESTE','ENG.COMPUTACAOUNILAGO@GMAIL.COM','$senhaPadrao',1)
 ";
 // Retornando a mensagem de sucesso ou erro ao popular a tabela de usuários
 if ($conn->query($insertUsers) === TRUE) {
@@ -118,11 +117,11 @@ if ($conn->query($insertUsers) === TRUE) {
   }
 
 //Populando a tabela de usuarios com users e adm
-$insertUsers = "INSERT INTO  category(CAT_Id, CAT_Codigo, CAT_Nome, CAT_Descricao, PhotoQuant, MinimumStockLevel, CAT_Ativo)
-VALUES(01,'500','CURSOS','Cursos EAD',1,0,'1'), 
-(02,'501','SMARTFONES','Smartfones e periféricos',7,1,'0'),
-(03,'502','ELETRODOMESTICOS','Eletrodomésticos em geral para casa',7,1,'1'),
-(04,'503','SOFTWARES','Programas e apps para PCs',5,0,'1')";
+$insertUsers = "INSERT INTO  category(CAT_Nome, CAT_Descricao, PhotoQuant, MinimumStockLevel, CAT_Ativo)
+VALUES('CURSOS','Cursos EAD',1,0,'1'), 
+('SMARTFONES','Smartfones e periféricos',7,1,'0'),
+('ELETRODOMESTICOS','Eletrodomésticos em geral para casa',7,1,'1'),
+('SOFTWARES','Programas e apps para PCs',5,0,'1')";
 // Retornando a mensagem de sucesso ou erro ao popular a tabela de usuários
 if ($conn->query($insertUsers) === TRUE) {
     echo 'Tabela de categoria populada com sucesso!<br>';
@@ -132,10 +131,10 @@ if ($conn->query($insertUsers) === TRUE) {
   }
 
 //Populando a tabela de usuarios com users e adm
-$insertUsers = "INSERT INTO  products(PRO_Id, PRO_Codigo, PRO_Nome, PRO_Descricao, PRO_Categoria_Id, PRO_Foto, PRO_Preco, PRO_Estoque, PRO_Ativo)
-VALUES(01,'001','TV','TV LG FULL HD','502','aaa','300,00', 50, 1),
-(02,'002','CURSO EXCEL','Curso de Excel','500','aaa','150,00', 0, 1),
-(03,'003','PHOTOSHOP','Adobe Photoshop CS9','503','aaa','600,00', 0, 1)
+$insertUsers = "INSERT INTO  products(PRO_Codigo, PRO_Nome, PRO_Descricao, PRO_Categoria_Id, PRO_Foto, PRO_Preco, PRO_Estoque, PRO_Ativo)
+VALUES('001','TV','TV LG FULL HD','3','aaa','300,00', 50, 1),
+('002','CURSO EXCEL','Curso de Excel','1','aaa','150,00', 0, 1),
+('003','PHOTOSHOP','Adobe Photoshop CS9','4','aaa','600,00', 0, 1)
 ";
 
 // Retornando a mensagem de sucesso ou erro ao popular a tabela de produtos
