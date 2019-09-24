@@ -37,15 +37,15 @@
 					Cadastre seu produto:
 				</span>
 
-				<div class="wrap-input100 validate-input" data-validate="Codigo é obrigatório">
+				<div class="wrap-input100 validate-input" data-validate="Codigo é obrigatório" >
 					<span id=codigo class="label-input100">Código</span>
-					<input class="input100" type="text" name="codigo" placeholder="Insira o Código do Produto">
+					<input class="input100" type="text" name="codigo" placeholder="Insira o Código do Produto" required>
 					<span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Nome do Produto é obrigatório">
 					<span id=Nome_Produto class="label-input100">Nome do Produto</span>
-					<input class="input100" type="text" name="Nome_Produto" placeholder="Insira o Nome do Produto">
+					<input class="input100" type="text" name="Nome_Produto" placeholder="Insira o Nome do Produto" required>
 					<span class="focus-input100"></span>
 				</div>
 
@@ -56,12 +56,12 @@
 				</div>
 				<div class="wrap-input100 validate-input" data-validate="Categoria é obrigatoria">
 					<span id=categoria class="label-input100">Categoria</span>
-					<input class="input100" type="text" name="categoria" placeholder="Informe a Categoria">
+					<input class="input100" type="number" name="categoria" min="1" max ="4" placeholder="Informe a Categoria" required>
 					<span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="A foto é obrigatoria">
 					<span id=foto class="label-input100">Foto Produto</span>
-					<input class="input100" type="file" name="foto">
+					<input class="input100" type="file" name="foto" required>
 					<span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Preço é obrigatorio">
@@ -71,7 +71,7 @@
                 </div>
                 <div class="wrap-input100 validate-input">
 					<span id=Qtd_Estoque class="label-input100">Quantidade em Estoque</span>
-					<input class="input100" type="number" name="Qtd_Estoque">
+					<input class="input100" type="number" name="Qtd_Estoque" required>
 					<span class="focus-input100"></span>
 				</div>
 				
