@@ -1,24 +1,30 @@
 <?php 
 
-require('../config.php');
+require('ConsultasSql.php');
+$ConsultasBanco = new ConsultasBanco();
+$ConsultasBanco->Conectarbanco();
 
-$con=mysqli_connect($NomeDoServer,$UserDoServer,$senha,$nomeDoBanco); 
-
-$user = $_POST['usuario'];
-$password = MD5($_POST['senha']);
-$email = $_POST['email'];
+$Usuario=$_POST['usuario'];
+$Email=$_POST['email'];
+$Senha=MD5($_POST['senha']);
 
 
-$select = mysql_select_db("server") or die("Sem acesso ao DB");
-$result = mysql_query("SELECT * FROM `USUARIO` WHERE `NOME` = '$login' AND `SENHA`= '$senha'");
 
-if(mysql_num_rows ($result) > 0 )
+/*$result = ("SELECT * FROM users WHERE Nome = '$Usuario' AND Senha = '$Senha'");
+
+if(($result) > 0 )
 {
     echo 'Usuário já existe';
 
-}
-
-else{
-    $sql = "INSERT INTO users(user, senha, email) VALUES ('$user','$password','$email')";
-}
+}*/
+/*else{*/
+    $sql = "INSERT INTO users(Nome, Senha, Email) VALUES ('$Usuario', '$Email', '$Senha')";
+    
+	if ($ConsultasBanco->ConectarBanco()->query($sql) === TRUE) {
+		echo 'Usuario criado com sucesso!<br>';
+	  }
+	  else {
+	   echo 'Error: '. $ConsultasBanco->ConectarBanco()->error;
+	  }
+/*}*/
 ?>

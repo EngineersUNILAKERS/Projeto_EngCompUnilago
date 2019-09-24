@@ -27,28 +27,28 @@
 </head>
 <body>
 
-
+	<form name="Form" method="POST" action="cadastro.php">
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form id="Form" method="POST" action="cadastro.php">
+			
 				<span class="contact100-form-title">
 					Crie seu cadastro
 				</span>
 
 				<div class="wrap-input100 validate-input">
-					<span id=user class="label-input100">User</span>
-					<input class="input100" type="text" name="name" placeholder="Entre com seu usuário" required>
+					<span id=usuario class="label-input100">User</span>
+					<input class="input100" type="text" name="usuario" placeholder="Entre com seu usuário" required>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" >
 					<span class="label-input100">Email</span>
-					<input class="input100" type="text" name="email" id="email" placeholder="Entre com seu email" required>
+					<input class="input100" type="text" name="email" placeholder="Entre com seu email" required>
 					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 validate-input">
 					<span class="label-input100">Senha</span>
-					<input class="input100" type="password" id = "senha" name="senha" placeholder="Digite sua senha" required>
+					<input class="input100" type="password" name="senha" placeholder="Digite sua senha" required>
 					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 validate-input" >
@@ -65,18 +65,18 @@
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
-						<button type="submit" action="cadastro.php" class="contact100-form-btn">
+						<button type="submit" class="contact100-form-btn">
 							<span>
 								Cadastrar
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 							</span>
 						</button>
-						
 					</div>
 				</div>
-			</form>
+			
 		</div>
 	</div>
+</form>
 
 
 
