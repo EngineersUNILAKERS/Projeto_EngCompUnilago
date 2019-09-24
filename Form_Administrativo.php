@@ -1,38 +1,93 @@
-<?php
 
-require('ConsultasSql.php');
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Controle</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
 
-$ConsultasBanco = new ConsultasBanco;
-
-$recebe_codigo = $_POST['codigo'];
-$recebe_Nome_Produto = $_POST['Nome_Produto'];
-$recebe_descricao = $_POST['descricao'];
-$recebe_categoria = $_POST['categoria'];
-$recebe_dinheiro = $_POST['dinheiro'];
-$recebe_Qtd_Estoque = $_POST['Qtd_Estoque'];
-$recebe_foto = $_FILES['foto'];
-/*$destino = "upload/";*/
-preg_match("/\.(jpg|jpeg|png){1}$/i",$recebe_foto['name'],$extencao1);
-$img_nome1 = md5(uniqid(time())).".".$extencao1[1];
-
-try {
-	$sql="INSERT INTO products (PRO_Codigo, PRO_Nome, PRO_Descricao, PRO_Categoria_Id , PRO_Foto, PRO_Preco, PRO_Estoque, PRO_Ativo ) 
-	VALUES ('$recebe_codigo', '$recebe_Nome_Produto', '$recebe_descricao', '$recebe_categoria', '$img_nome1', '$recebe_dinheiro', '$recebe_Qtd_Estoque', 1)";
-	
-   
-	if ($ConsultasBanco->ConectarBanco()->query($sql) === TRUE) {
-		echo 'Produto criado com sucesso!<br>';
-	  }
-	  else {
-	   echo 'Error: '. $ConsultasBanco->ConectarBanco()->error;
-	  }
-		  
-}catch(PDOException $e) {
-	
-	
-	echo $e->getMessage();
-	
-}
+    <div class="container-contact100">
+	   <div class="wrap-contact100-form-btn">
+            <div class="contact100-form-bgbtn"></div>
+            <button class="contact100-form-btn">
+                <span><a href="Form_Products.html">
+                     Cadastrar Usuário:
+                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                </a></span>
+            </button>
+		    </div>
+			<div><button class="contact100-form-btn">
+                <span><a href="Mostrat_Usu.php">
+                     Consultar Usuário:
+                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                </a></span>
+            </button>
+		    </div>
+		<form method="POST" action="pesquisar_Usu.php">
+          Pesquisar:<input type="text" name="pesquisar" placeholder="PESQUISAR">
+          <input type="submit" value="ENVIAR">
+        </form>
+	 
+    
+    
 
 
-?>
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
