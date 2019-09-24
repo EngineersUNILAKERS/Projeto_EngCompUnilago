@@ -179,5 +179,15 @@ class ConsultasBanco
     //   }
       return null;
     } 
+    public function SelectProd()
+    {
+    
+      $ConsultasBanco = new ConsultasBanco;
+
+      $sql=("SELECT PRO_Codigo, PRO_Nome, PRO_Descricao, PRO_Foto, PRO_Preco, PRO_Estoque FROM products");
+      $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+
+      return $result;
 }
 
+}
