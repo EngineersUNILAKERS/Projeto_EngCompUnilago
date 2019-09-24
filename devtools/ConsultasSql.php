@@ -187,7 +187,11 @@ class ConsultasBanco
       $sql=("SELECT PRO_Codigo, PRO_Nome, PRO_Descricao, PRO_Foto, PRO_Preco, PRO_Estoque FROM products");
       $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
 
-      return $result;
-}
+      while($nome = mysqli_fetch_assoc($result))
+      {      
+      $listaNomes[] = $nome;
+      }
+      return $listaNomes;
+    }
 
 }

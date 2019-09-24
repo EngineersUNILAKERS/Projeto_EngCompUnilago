@@ -131,6 +131,21 @@ if ($conn->query($insertUsers) === TRUE) {
    echo 'Error: '. $conn->error;
   }
 
+//Populando a tabela de usuarios com users e adm
+$insertUsers = "INSERT INTO  products(PRO_Id, PRO_Codigo, PRO_Nome, PRO_Descricao, PRO_Categoria_Id, PRO_Foto, PRO_Preco, PRO_Estoque, PRO_Ativo)
+VALUES(01,'001','TV','TV LG FULL HD','502','aaa','300,00', 50, 1),
+(02,'002','CURSO EXCEL','Curso de Excel','500','aaa','150,00', 0, 1),
+(03,'003','PHOTOSHOP','Adobe Photoshop CS9','503','aaa','600,00', 0, 1)
+";
+
+// Retornando a mensagem de sucesso ou erro ao popular a tabela de produtos
+if ($conn->query($insertUsers) === TRUE) {
+    echo 'Tabela de produtos populada com sucesso!<br>';
+  }
+  else {
+   echo 'Error: '. $conn->error;
+  }
+
 ?>
 
 
