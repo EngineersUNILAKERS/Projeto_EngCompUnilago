@@ -23,7 +23,6 @@ if($total > 0)
     
 } else {
     echo 'conferir senha';
-    
 }
 
 ?>

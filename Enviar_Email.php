@@ -31,7 +31,7 @@
     <form name="Form_email" action="mail.php" method="post" enctype="multipart/form-data">
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+		
 				<span class="contact100-form-title">
 					Disparo de Emails
 				</span>
@@ -75,7 +75,7 @@
 						</button>
 					</div>
 				</div>
-			</form>
+			
 		</div>
 	</div>
     </form>
