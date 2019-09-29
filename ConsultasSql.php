@@ -189,7 +189,7 @@ class ConsultasBanco
     }
 
 //select pra buscar informaçoes dos usuarios
-    Public function SelectUsuarios()
+    public function SelectUsuarios()
     {
       
         $ConsultasBanco = new ConsultasBanco;
@@ -207,7 +207,7 @@ class ConsultasBanco
       
     }
 // pesquisar usuarios 
-    Public function PesquisarUsuarios()
+    public function PesquisarUsuarios()
     {
       $ConsultasBanco = new ConsultasBanco;
 
@@ -220,4 +220,20 @@ class ConsultasBanco
       }
       return $listaNomes;
     }
+    public function verificaAdm($grupo)
+    {
+      if($grupo==2)
+      {
+        return 'é adm';
+      }
+      else if($grupo==1)
+      {
+        header('Location:DashboardUser.html');
+      }
+      else
+      {
+        header('Location:index.html');
+      }
+    }
+
 }

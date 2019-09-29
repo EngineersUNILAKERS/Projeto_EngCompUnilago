@@ -1,13 +1,7 @@
-<?php 
-require('ConsultasSql.php');
-session_start();
-$ConsultasBanco = new ConsultasBanco;
-$ConsultasBanco->verificaAdm($_SESSION['grupo']);
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Form_Products</title>
+	<title>Página Principal</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -28,67 +22,54 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
 <body>
 
-    <form name="Form_email" action="mail.php" method="post" enctype="multipart/form-data">
+
 	<div class="container-contact100">
-		<div class="wrap-contact100">
 		
-				<span class="contact100-form-title">
-					Disparo de Emails
-				</span>
-
-				<div class="wrap-input100 validate-input" data-validate="Escolha menos um usuário">
-					<span id=codigo class="label-input100">Escolha o Email</span>
-					<select name="select">
-						<option value="valor1"selected></option> 
-						<?php
-						$emails = $ConsultasBanco->ListaEmail();
-						foreach($emails as $lista)
-						{
-							echo'<option name="email" value="'.$lista.'">'.$lista.'</option>';
-						}
-						?>
-					  </select>
-					<span class="focus-input100"></span>
-                </div>
-
-                <div class="wrap-input100 validate-input" data-validate="Nome do Produto é obrigatório">
-					<span id=Nome_Produto class="label-input100">Insira sua mensagem</span>
-					<input class="input100" type="text" name="msg" placeholder="Insira sua mensagem">
-					<span class="focus-input100"></span>
+			<div><button class="contact100-form-btn" type="button">
+					<span>
+						USUÁRIO
+					</span>
+				</button>
 				</div>
-
-				<div class="wrap-input100 validate-input">
-				
-				
-
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
 						<button class="contact100-form-btn">
-							<span>
-								Enviar
+							<span><a href="menu_Prod.php">
+								PRODUTOS
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</span>
+							</a></span>
 						</button>
 					</div>
 				</div>
-			
-		</div>
+				<div>
+				<button class="contact100-form-btn" type="button">
+					<span>
+						CATEGORIA
+					</span>
+				</button>
+			</div>
+				<div>
+				<button class="contact100-form-btn" type="button">
+					<span><a href="Enviar_Email.php">
+						EMAIL
+						<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+					</a></span>
+				</button>
+			</div>
 	</div>
-    </form>
+
 
 
 	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script> 
 <!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
