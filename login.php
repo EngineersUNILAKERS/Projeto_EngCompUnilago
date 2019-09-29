@@ -44,6 +44,7 @@ if($total > 0)
     unset ($_SESSION['grupo']);
     unset ($_SESSION['email']);
     unset ($_SESSION['senha']);
+    unset ($_SESSION['login']);
     echo 'conferir senha';
 }
 
