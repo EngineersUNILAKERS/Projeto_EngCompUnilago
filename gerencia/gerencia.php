@@ -33,7 +33,8 @@ color:#FFFFFF;
 <?php 
 $sql = mysql_query("select * from USERS");
 
-while($linha = mysql_fetch_array($sql)){
+while($linha = mysql_fetch_array($sql))
+{
 $id = $linha['Id_Cli'];
 $login = $linha['Login']; 
 $foto = $linha['Nome'];

@@ -1,3 +1,10 @@
+<?php 
+//Patrick - Aqui eu faço a verificação se o user ta logado, e se ele é adm(precisa de adm pra ver essa pagina)
+require('ConsultasSql.php');
+session_start();
+$ConsultasBanco = new ConsultasBanco;
+$ConsultasBanco->verificaAdm($_SESSION['grupo']);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,16 +33,19 @@
 <!--===============================================================================================-->
 </head>
 <body>
+<!-- patrick - coloquei o teu h2 com a mensagem de bem vindo mais o login do user -->
+<h2> Seja Bem-Vindo <?php echo ' ' .$_SESSION['login']; ?></h2>
 
 
 	<div class="container-contact100">
-		
+			<!-- patrick - A opção de ver usuário é esse trecho de código - trecho gerencia -->
 			<div><button class="contact100-form-btn" type="button">
-					<span>
-						USUÁRIO
-					</span>
+					<span><a href="gerencia\menu.php">
+						USUÁRIOS
+					</a></span>
 				</button>
 				</div>
+				<!-- trecho gerencia termina aqui -->
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>

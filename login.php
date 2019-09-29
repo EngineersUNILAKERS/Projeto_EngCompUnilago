@@ -11,7 +11,7 @@ $email = $_POST['email'];
 $senha = md5($_POST['senha']);
 
 //Select que retorna uma linha com email, quando a consulta achar email e senha iguais ao informado pelo user
-$sql = "SELECT email, Grupo_Id FROM users WHERE email = '$email' AND senha = '$senha'";
+$sql = "SELECT email, Login, Grupo_Id FROM users WHERE email = '$email' AND senha = '$senha'";
 $buscar = mysqli_query($ConsultasBanco->Conectarbanco(),$sql);
 //Função que indica quantas linhas o select retornou
 $total = mysqli_num_rows($buscar);
@@ -19,6 +19,7 @@ $total = mysqli_num_rows($buscar);
 while($consulta = mysqli_fetch_assoc($buscar))
 {
    $grupo = $consulta['Grupo_Id'];
+   $login = $consulta['Login'];
 }
  
 
@@ -34,8 +35,9 @@ if($total > 0)
     $_SESSION['grupo'] = $grupo;
     $_SESSION['email'] = $email;
     $_SESSION['senha'] = $senha;
+    $_SESSION['login'] = $login;
     }
-    header('Location:Dashboard.html');
+    header('Location:Dashboard.php');
     
 } else {
     session_start();
