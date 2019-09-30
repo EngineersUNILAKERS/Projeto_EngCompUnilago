@@ -53,8 +53,32 @@ echo "<tr><td>".$id."</td><td>".$login."</td><td>".$nome."</td><td>".$senha."</t
 
 ?>
 </table>
-<a href="../cadastro.html">Cadastrar</a>
-<a href="menu.php">Voltar</a>
 
+<div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button type="submit" class="contact100-form-btn">
+						<span>
+                        <a href="../cadastro_gerencia.html">Cadastrar</a>
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							
+						</span>
+					</button>
+				</div>
+			</div>
+
+
+<div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button type="submit" class="contact100-form-btn">
+						<span>
+								<a href="menu.php">Menu</a>
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							
+						</span>
+					</button>
+				</div>
+			</div>
 </body>
 </html>

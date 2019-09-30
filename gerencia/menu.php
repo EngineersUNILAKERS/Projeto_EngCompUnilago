@@ -15,11 +15,49 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 <body>
 
 <ul>
-<li><a href="gerenciar.php">Gerenciar</a></li>
-   <li><a href="../cadastro.html">Cadastrar</a></li>
+<div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button type="submit" class="contact100-form-btn">
+						<span>
+               <li><a href="gerenciar.php">Gerenciar</a></li>
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							
+						</span>
+					</button>
+				</div>
+      </div>  
+      
 
 
- <li><a href="logout.php">Logout</a></li>
+      <div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button type="submit" class="contact100-form-btn">
+						<span>
+            <li><a href="../cadastro_gerencia.html">Cadastrar</a></li>
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							
+						</span>
+					</button>
+				</div>
+			</div>    
+
+      <div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button type="submit" class="contact100-form-btn">
+						<span>
+            <li><a href="logout.php">Logout</a></li>
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							
+						</span>
+					</button>
+				</div>
+			</div>    
+
+
+
 </ul>
 
 </body>
