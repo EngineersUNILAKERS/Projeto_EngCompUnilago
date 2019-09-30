@@ -31,7 +31,7 @@ color:#FFFFFF;
 <hr color="#FF0000" />
 <table width="396" cellpadding="1"  cellspacing="0" align="center" border = "1">
 <tr>
-<th>ID</th><th>Login</th><th>Senha</th><th>Nome</th><th>Email</th><th>Grupo</th><th colspan="2">Opções</th>
+<th>ID</th><th>Login</th><th>Nome</th><th>Senha</th><th>Email</th><th>Grupo</th><th colspan="2">Opções</th>
 </tr>
 <?php 
  $sql=("SELECT * FROM USERS");
@@ -46,13 +46,15 @@ $senha = $linha['Senha'];
 $email = $linha['Email'];
 $msg =  $linha['Grupo_Id'];
 
-echo "<tr><td>".$id."</td><td>".$login."</td><td>".$senha."</td><td>".$email."</td><td>".$nome."</td><td>".$msg."</td><td><a href='editar.php?id=".$id."'><img src='../img/editar.png' title='Editar'></a></td><td><a href='excluir.php?id=".$id."'><img src='../img/excluir.gif' title='Excluir'></a></td>
+echo "<tr><td>".$id."</td><td>".$login."</td><td>".$nome."</td><td>".$senha."</td><td>".$email."</td><td>".$msg."</td><td><a href='editar.php?id=".$id."'><img src='../img/editar.png' title='Editar'></a></td><td><a href='excluir.php?id=".$id."'><img src='../img/excluir.gif' title='Excluir'></a></td>
 <br>
 </tr>";
 }
 
 ?>
 </table>
+<a href="../cadastro.html">Cadastrar</a>
 <a href="menu.php">Voltar</a>
+
 </body>
 </html>
