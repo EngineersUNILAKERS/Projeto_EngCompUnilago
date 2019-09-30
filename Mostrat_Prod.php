@@ -27,7 +27,8 @@
 <!--===============================================================================================-->
 </head>
 <body>
-<div class="wrap-contact100">
+<div class="container-contact100">
+ <div class="wrap-contact100">
 		 <?php
 		 require('ConsultasSql.php');
 		 $ConsultasBanco = new ConsultasBanco;
@@ -40,7 +41,17 @@
 			<div><h4><?php echo $lista ['PRO_Preco']?><br></h4></div>
 			<div><h4><?php echo $lista ['PRO_Estoque']?><br></h4></div>
 			<div><h4><?php echo $lista ['PRO_Foto']?><br></h4></div>
+			<?php$id_prod = $lista['PRO_Id'];?>
+			<div>
+			<li>
+			<a href='Form_Alterar_Prod.php'><button class="btn btn-danger">Alterar</button></a>	
+			</li>
+		    <li>
+		    </li>	
+			
+		</div>
 			<br><br>
 		  <?php }?>
 	</div>
+  </div>
 </body>

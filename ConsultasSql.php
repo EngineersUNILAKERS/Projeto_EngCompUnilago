@@ -220,6 +220,7 @@ class ConsultasBanco
       }
       return $listaNomes;
     }
+
     public function verificaAdm($grupo)
     {
       if($grupo==2)
@@ -235,5 +236,7 @@ class ConsultasBanco
         header('Location:index.html');
       }
     }
+    
+
 
 }
