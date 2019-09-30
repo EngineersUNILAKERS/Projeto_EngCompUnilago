@@ -30,7 +30,7 @@
 <body>
 	
 <?php
-	$id_prod = 2;
+	$id_prod = $_GET['id'];
 	/* $_POST['PRO_Id'];*/
  	require('ConsultasSql.php');
 	session_start();
@@ -65,22 +65,19 @@
 							
 				<h2>Alteração de produto</h2>
 				
-				<form method="post" action="alterarProduto.php" name="incluiProd" enctype="multipart/form-data">
+				<form method="post" action="alterarProduto.php?id=<?php echo $id_prod;?>" name="incluiProd" enctype="multipart/form-data">
 				
-					<div class="form-group">
-				
+					<div class="form-group" class="label-input100">
 						<label for="Produto">Produto</label>
 						<input type="text" name="Produto" value="<?php echo $exibe_nome;?>"  class="form-control" required id="Produto">
 					</div>
-					<div class="form-group">
-				
-					<label for="Descricao">Descrição</label>
-					
-						<textarea rows="5" class="form-control" name="Descricao"><?php echo $exibe_descricao; ?></textarea>
-						
 
+					<div class="form-group" class="label-input100">
+						<label for="Descricao">Descrição</label>
+						<textarea rows="5" class="form-control" name="Descricao"><?php echo $exibe_descricao; ?></textarea>
 					</div>
-					<div class="form-group">
+
+					<div class="form-group" class="label-input100">
 				
 						<label for="Categoria">Categoria</label>
 						<input type="number" name="Categoria" min="1" max="4" value="<?php echo $pega_categoria;?>"  class="form-control" required id="Categoria">
@@ -96,19 +93,26 @@
 	                        }
 						   ?>
 					</div>
-					<div class="form-group">
-				
-					<label for="PRO_foto">Foto Principal</label>
 					
-					<input type="file" accept="image/*" class="form-control" required name="Foto" id="Foto1">
+					<div class="form-group" class="label-input100">				
+					 <label for="PRO_foto">Foto Principal</label>
+					  <input type="file" accept="image/*" class="form-control" required name="Foto" id="Foto1">
+					</div>
+					<div class="form-group">
+					  <img src="upload/<?php echo $exibe_foto; ?>" width="100px" >
+					</div>
 
+					<div class="form-group" class="label-input100">
+						<label for="dinheiro">Preço (R$)</label>
+						<input type="text" name="dinheiro" id="dinheiro" value="<?php echo $exibe_preco;?>" 
+						class="dinheiro form-control" style="display:inline-block">
+					</div>
+					<div class="form-group" class="label-input100">
+				
+						<label for="Estoque">Quantidade em Estoque</label>
+						<input type="number" min="1" max="99" name="Estoque" value="<?php echo $exibe_estoque;?>"  class="form-control" required id="Produto">
 					</div>
 					
-					<div class="form-group">
-						
-					<img src="upload/<?php echo $exibe_foto; ?>" width="100px" >
-						
-					</div>
 						
 												
 				<button type="submit" class="btn btn-lg btn-primary">

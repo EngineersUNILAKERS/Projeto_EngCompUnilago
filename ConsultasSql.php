@@ -164,7 +164,7 @@ class ConsultasBanco
     
       $ConsultasBanco = new ConsultasBanco;
 
-      $sql=("SELECT PRO_Codigo, PRO_Nome, PRO_Descricao, PRO_Foto, PRO_Preco, PRO_Estoque FROM products");
+      $sql=("SELECT * FROM products");
       $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
 
       while($nome = mysqli_fetch_assoc($result))
@@ -236,7 +236,13 @@ class ConsultasBanco
         header('Location:index.html');
       }
     }
-    
+    public function AlteraCadastro()
+    {
+
+
+
+    }
+
 
 
 }

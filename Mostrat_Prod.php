@@ -41,10 +41,10 @@
 			<div><h4><?php echo $lista ['PRO_Preco']?><br></h4></div>
 			<div><h4><?php echo $lista ['PRO_Estoque']?><br></h4></div>
 			<div><h4><?php echo $lista ['PRO_Foto']?><br></h4></div>
-			<?php$id_prod = $lista['PRO_Id'];?>
+			<?php $id_prod = $lista['PRO_Id'];?>
 			<div>
 			<li>
-			<a href='Form_Alterar_Prod.php'><button class="btn btn-danger">Alterar</button></a>	
+			<a href="Form_Alterar_Prod.php?id=<?php echo $id_prod;?>"><button class="btn btn-danger">Alterar</button></a>	
 			</li>
 		    <li>
 		    </li>	
