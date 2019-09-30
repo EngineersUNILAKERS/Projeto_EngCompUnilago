@@ -15,7 +15,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 <body>
 
 <ul>
-<li><a href="gerencia.php">Gerenciar</a></li>
+<li><a href="gerenciar.php">Gerenciar</a></li>
    <li><a href="../cadastro.html">Cadastrar</a></li>
 
 
