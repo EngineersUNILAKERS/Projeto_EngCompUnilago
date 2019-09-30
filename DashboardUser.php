@@ -1,13 +1,7 @@
-<?php 
-require('ConsultasSql.php');
-session_start();
-$ConsultasBanco = new ConsultasBanco;
-$ConsultasBanco->verificaAdm($_SESSION['grupo']);
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Produtos</title>
+	<title>Página Principal</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -33,30 +27,29 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 </head>
 <body>
 
-    <div class="container-contact100">
-	   <div class="wrap-contact100-form-btn">
-            <div class="contact100-form-bgbtn"></div>
-            <button class="contact100-form-btn">
-                <span><a href="Form_Products.html">
-                     CADASTRAR NOVOS PRODUTOS
-                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                </a></span>
-            </button>
-		    </div>
-			<div><button class="contact100-form-btn">
-                <span><a href="Mostrat_Prod.php">
-                     CONSULTAR PRODUTOS
-                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                </a></span>
-            </button>
-		    </div>
-		<form method="POST" action="pesquisar.php">
-          Pesquisar:<input type="text" name="pesquisar" placeholder="PESQUISAR">
-          <input type="submit" value="ENVIAR">
-        </form>
-	 
-    
-    
+
+	<div class="container-contact100">
+		
+			<div><button class="contact100-form-btn" type="button">
+					<span>
+						Perfil
+					</span>
+				</button>
+				</div>
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							<span><a href="menu_ProdUser.php">
+								Pesquisar Produtos
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</a></span>
+						</button>
+					</div>
+				</div>
+				
+	</div>
+
 
 
 	<div id="dropDownSelect1"></div>

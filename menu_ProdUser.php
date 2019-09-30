@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Página Principal</title>
+	<title>Produtos</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -27,43 +28,23 @@
 </head>
 <body>
 
-
-	<div class="container-contact100">
-		
-			<div><button class="contact100-form-btn" type="button">
-					<span>
-						USUÁRIO
-					</span>
-				</button>
-				</div>
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							<span><a href="menu_Prod.php">
-								PRODUTOS
-								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</a></span>
-						</button>
-					</div>
-				</div>
-				<div>
-				<button class="contact100-form-btn" type="button">
-					<span>
-						CATEGORIA
-					</span>
-				</button>
-			</div>
-				<div>
-				<button class="contact100-form-btn" type="button">
-					<span><a href="Enviar_Email.php">
-						EMAIL
-						<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-					</a></span>
-				</button>
-			</div>
-	</div>
-
+    <div class="container-contact100">
+	   <div class="wrap-contact100-form-btn">
+       
+			<div><button class="contact100-form-btn">
+                <span><a href="Mostrat_Prod.php">
+                     CONSULTAR PRODUTOS
+                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                </a></span>
+            </button>
+		    </div>
+		<form method="POST" action="pesquisar.php">
+          Pesquisar:<input type="text" name="pesquisar" placeholder="PESQUISAR">
+          <input type="submit" value="ENVIAR">
+        </form>
+	 
+    
+    
 
 
 	<div id="dropDownSelect1"></div>

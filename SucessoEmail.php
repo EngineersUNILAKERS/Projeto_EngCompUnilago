@@ -7,7 +7,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 <!DOCTYPE html>
 <html lang="pt-br">
 <head> 
-	<title>Form_Products</title>
+	<title>Sucesso</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -34,116 +34,29 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 </head>
 <body>
 
-    <form name="Form_email" action="PHPMailer/mail.php" method="post" enctype="multipart/form-data">
+    
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 		
 				<span class="contact100-form-title">
-					Disparo de Emails
+					Email enviado com Sucesso!
 				</span>
-				<div class="wrap-input100 validate-input" data-validate="Escolha ao menos um usuário">
-				<span id=codigo class="label-input100">Escolha o grupo de usuários</span><br>
-				<INPUT TYPE="RADIO" NAME="OPCAO" VALUE="todos" CHECKED>Todos
-				<?php
-				$grupos = $ConsultasBanco->ListaGrupos();
-				foreach($grupos as $grupo)
-				{
-					echo '<INPUT TYPE="RADIO" NAME="OPCAO" VALUE="'.$grupo.'"> Grupo '.$grupo;
-
-				}
-	
-				?>
-				</div>
-
-
-				<div class="wrap-input100 validate-input" data-validate="Escolha ao menos um usuário">
-					<span id=codigo class="label-input100">Escolha o Email</span>
-
-					<div class="todos">
-					<select name="email">
-						<option value="valor1"selected>Escolha</option> 
-						<?php
-						$emails = $ConsultasBanco->ListaEmail();
-						foreach($emails as $lista)
-						{
-							$email = $lista;
-							echo'<option name="email" value="'.$email.'">'.$email.'</option>';
-							$todos .= $email.' ';
-						}
-						echo'<option name="email" value="'.$todos.'">'."Todos".'</option>';
-						?>
-					  </select>
-					<span class="focus-input100"></span>
-				</div>
-
-				<!-- <div class="adm">
-					<select name="email">
-						<option value="valor1"selected>Escolha</option> 
-						<?php
-						// $emails = $ConsultasBanco->ListaEmailAdm();
-						// foreach($emails as $lista)
-						// {
-						// 	$email = $lista;
-						// 	echo'<option name="email" value="'.$email.'">'.$email.'</option>';
-						// 	$todos .= $email.' ';
-						// }
-						// echo'<option name="email" value="'.$todos.'">'."Todos".'</option>';
-						?>
-					  </select>
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="user">
-					<select name="email">
-						<option value="valor1"selected>Escolha</option> 
-						<?php
-						// $emails = $ConsultasBanco->ListaEmailUser();
-						// foreach($emails as $lista)
-						// {
-						// 	$email = $lista;
-						// 	echo'<option name="email" value="'.$email.'">'.$email.'</option>';
-						// 	$todos .= $email.' ';
-						// }
-						// echo'<option name="email" value="'.$todos.'">'."Todos".'</option>';
-						?>
-					  </select>
-					<span class="focus-input100"></span>
-				</div> -->
-
-				
-
-				<div class="wrap-input100 validate-input" data-validate="Assunto é obrigatória">
-					<span id=Nome_Produto class="label-input100">Insira o assunto do email</span>
-				<input class="input100" type="text" name="assunto" placeholder="Assunto">
-				<span class="focus-input100"></span>
-				</div>
-
-
-                <div class="wrap-input100 validate-input" data-validate="Mensagem é obrigatória">
-					<span id=Nome_Produto class="label-input100">Insira sua mensagem</span>
-					<textarea class="input100" rows="8" cols="85" name="msg" placeholder="Insira sua mensagem"></textarea>
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input">
-				
-				
-
+		
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
 						<button class="contact100-form-btn">
-							<span>
-								Enviar
+							<span><a href="Enviar_Email.php">
+								Voltar
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</span>
+							</a></span>
 						</button>
 					</div>
 				</div>
 			
 		</div>
 	</div>
-    </form>
+
 
 
 	<div id="dropDownSelect1"></div>

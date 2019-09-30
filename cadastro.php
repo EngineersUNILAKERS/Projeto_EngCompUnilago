@@ -18,7 +18,7 @@ if(($result) > 0 )
 
 }*/
 /*else{*/
-    $sql = "INSERT INTO users(Nome, Senha, Email) VALUES ('$Usuario', '$Email', '$Senha')";
+    $sql = "INSERT INTO users(Nome, Senha, Email) VALUES ('$Usuario', '$Senha', '$Email')";
     
 	if ($ConsultasBanco->ConectarBanco()->query($sql) === TRUE) {
 		echo 'Usuario criado com sucesso!<br>';

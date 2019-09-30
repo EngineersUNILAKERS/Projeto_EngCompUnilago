@@ -228,12 +228,68 @@ class ConsultasBanco
       }
       else if($grupo==1)
       {
-        header('Location:DashboardUser.html');
+        header('Location:DashboardUser.php');
       }
       else
       {
         header('Location:index.html');
       }
     }
+    public function ListaGrupos()
+    {
+      $ConsultasBanco = new ConsultasBanco;
 
+      $sql="SELECT DISTINCT Grupo_Id FROM USERS";
+      $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+      
+      
+      while($nome = mysqli_fetch_assoc($result))
+      {      
+      $listaNomes[] = $nome;
+      }
+      foreach($listaNomes as $lista)
+      {
+        $grupos[] = $lista['Grupo_Id'];   
+      }
+      return $grupos;
+    }
+
+    public function  ListaEmailAdm()
+    {
+      $ConsultasBanco = new ConsultasBanco;
+
+      $sql="SELECT Email FROM USERS WHERE Grupo_Id = '2'";
+      $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+      
+      
+      while($nome = mysqli_fetch_assoc($result))
+      {      
+      $listaNomes[] = $nome;
+      }
+      foreach($listaNomes as $lista)
+      {
+        $email[] = $lista['Email'];   
+      }
+      return $email;
+    } 
+    public function ListaEmailUser()
+    {
+      $ConsultasBanco = new ConsultasBanco;
+
+      $sql="SELECT Email FROM USERS WHERE Grupo_Id = '1'";
+      $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+      
+      
+      while($nome = mysqli_fetch_assoc($result))
+      {      
+      $listaNomes[] = $nome;
+      }
+      foreach($listaNomes as $lista)
+      {
+        $email[] = $lista['Email'];   
+      }
+      return $email;
+    } 
+   
+    
 }
