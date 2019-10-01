@@ -18,11 +18,9 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 <div class="container-contact100-form-btn">
 				<div class="wrap-contact100-form-btn">
 					<div class="contact100-form-bgbtn"></div>
-					<button type="submit" class="contact100-form-btn">
+					<button class="contact100-form-btn">
 						<span>
-               <li><a href="gerenciar.php">Gerenciar</a></li>
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							
+               				<a href="gerenciar.php">Gerenciar</a></li>
 						</span>
 					</button>
 				</div>
@@ -33,11 +31,9 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
       <div class="container-contact100-form-btn">
 				<div class="wrap-contact100-form-btn">
 					<div class="contact100-form-bgbtn"></div>
-					<button type="submit" class="contact100-form-btn">
+					<button class="contact100-form-btn">
 						<span>
-            <li><a href="../cadastro_gerencia.html">Cadastrar</a></li>
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							
+            				<a href="../cadastro_gerencia.html">Cadastrar</a></li>
 						</span>
 					</button>
 				</div>
@@ -46,11 +42,9 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
       <div class="container-contact100-form-btn">
 				<div class="wrap-contact100-form-btn">
 					<div class="contact100-form-bgbtn"></div>
-					<button type="submit" class="contact100-form-btn">
+					<button class="contact100-form-btn">
 						<span>
-            <li><a href="logout.php">Logout</a></li>
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							
+            				<a href="logout.php">Logout</a></li>						
 						</span>
 					</button>
 				</div>
