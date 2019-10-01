@@ -27,7 +27,7 @@
 </head>
 <body>
 
-	<form name="Form" method="POST" action="cadastro.php">
+	<form id = "Form" name="Form" method="POST" action="cadastro.php">
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			
@@ -48,15 +48,19 @@
 				</div>
 				<div class="wrap-input100 validate-input">
 					<span class="label-input100">Senha</span>
-					<input class="input100" type="password" name="senha" placeholder="Digite sua senha" required>
+					<input class="input100" type="password" id = "senha" name="senha" placeholder="Digite sua senha" required>
 					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 validate-input" >
 					<span  class="label-input100">Confirme sua Senha</span>
 					<input class="input100" type="password" name="conf_senha" placeholder="Confirme sua senha" required>
-					<span class="focus-input100"></span>
-				
-
+					<span class="focus-input100"></span>				
+				</div>
+				<div class="wrap-input100 validate-input" >
+					<span  class="label-input100">Grupo de usuário</span>
+					<input class="input100" type="number" min= '1' max="2" id = "grupo" name="grupo">
+					<span class="focus-input100"></span>				
+				</div>
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
@@ -117,3 +121,4 @@
 
 </body>
 </html>
+
