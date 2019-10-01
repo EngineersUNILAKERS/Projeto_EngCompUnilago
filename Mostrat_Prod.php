@@ -36,12 +36,24 @@
   		 $categoria = $ConsultasBanco->SelectProd();
 		 foreach($categoria as $lista)
 		  {
-			  ?>		 
+			?>
+
 	        <div><h3><?php echo 'Nome do Produto: ',$lista ['PRO_Nome']?><br></h3></div>
 			<div><h4><?php echo 'Descrição: ',$lista ['PRO_Descricao']?><br></h4></div>
 			<div><h4><?php echo 'R$: ', $lista ['PRO_Preco']?><br></h4></div>
 			<div><h4><?php echo 'Quantidade em Estoque: ',$lista ['PRO_Estoque']?><br></h4></div>
 			<div><h4><?php echo 'Foto: ',$lista ['PRO_Foto']?><br></h4></div>
+			<?php $verifica = $lista['PRO_Ativo']; 
+			if($verifica== 1)
+			{
+				?><div><h4><?php echo 'Produto está ativo no momento!';?></h4></div>
+			<?php
+			}
+			 else{
+				?><div><h4><?php echo 'Produto está desativado!';?></h4></div><?php
+			}
+			?>
+			
 			<?php $id_prod = $lista['PRO_Id'];?>
 			<div>
 			<li>
