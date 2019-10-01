@@ -11,7 +11,7 @@ $recebe_Qtd_Fotos = $_POST['Qtd_Fotos'];
 $recebe_Estoque_Min = $_POST['Estoque_Min'];
 
 try {
-	$sql="INSERT INTO products (CAT_Codigo, CAT_Nome, CAT_Descricao, PhotoQuant , MinimumStockLevel, CAT_Ativo ) 
+	$sql="INSERT INTO categorias (CAT_Codigo, CAT_Nome, CAT_Descricao, PhotoQuant , MinimumStockLevel, CAT_Ativo ) 
 	VALUES ('$recebe_codigo', '$recebe_Nome_Categoria', '$recebe_descricao', '$recebe_Qtd_Fotos', '$recebe_Estoque_Min, 1)";
 	
    
