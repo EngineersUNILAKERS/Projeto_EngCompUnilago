@@ -181,6 +181,7 @@ class ConsultasBanco
       $sql=("SELECT * FROM products WHERE PRO_Nome LIKE '%$pesquisar%' LIMIT 5");
       $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
       $verifica = $result->num_rows;
+      
       if($verifica!=NULL){
       while($nome = mysqli_fetch_assoc($result))
       {      

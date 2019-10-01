@@ -29,6 +29,7 @@
 <body>
 <div class="container-contact100">
  <div class="wrap-contact100">
+ <a href="menu_Prod.php"><button class="btn btn-secondary">Voltar</button></a><br>
 		 <?php
 		 require('ConsultasSql.php');
 		 $ConsultasBanco = new ConsultasBanco;
@@ -36,22 +37,25 @@
 		 foreach($categoria as $lista)
 		  {
 			  ?>		 
-	        <div><h3><?php echo $lista ['PRO_Nome']?><br></h3></div>
-			<div><h4><?php echo $lista ['PRO_Descricao']?><br></h4></div>
-			<div><h4><?php echo $lista ['PRO_Preco']?><br></h4></div>
-			<div><h4><?php echo $lista ['PRO_Estoque']?><br></h4></div>
-			<div><h4><?php echo $lista ['PRO_Foto']?><br></h4></div>
+	        <div><h3><?php echo 'Nome do Produto: ',$lista ['PRO_Nome']?><br></h3></div>
+			<div><h4><?php echo 'Descrição: ',$lista ['PRO_Descricao']?><br></h4></div>
+			<div><h4><?php echo 'R$: ', $lista ['PRO_Preco']?><br></h4></div>
+			<div><h4><?php echo 'Quantidade em Estoque: ',$lista ['PRO_Estoque']?><br></h4></div>
+			<div><h4><?php echo 'Foto: ',$lista ['PRO_Foto']?><br></h4></div>
 			<?php $id_prod = $lista['PRO_Id'];?>
 			<div>
 			<li>
-			<a href="Form_Alterar_Prod.php?id=<?php echo $id_prod;?>"><button class="btn btn-danger">Alterar</button></a>	
+			<a href="Form_Alterar_Prod.php?id=<?php echo $id_prod;?>"><button class="btn btn-warning">Alterar</button></a>	
 			</li>
-		    <li>
+			<li><a href="Ativar.php"><button class="btn btn-primary">Ativar</button></a>
+			<a href="Desativar.php"><button class="btn btn-danger">Desativar</button></a>
 		    </li>	
 			
 		</div>
 			<br><br>
 		  <?php }?>
 	</div>
-  </div>
+</div>
+
+
 </body>

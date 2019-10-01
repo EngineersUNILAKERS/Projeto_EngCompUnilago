@@ -34,26 +34,45 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 <body>
 
     <div class="container-contact100">
-	   <div class="wrap-contact100-form-btn">
-            <div class="contact100-form-bgbtn"></div>
+	   <div>
+          <div>
             <button class="contact100-form-btn">
                 <span><a href="Form_Products.php">
                      CADASTRAR NOVOS PRODUTOS
                     <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
                 </a></span>
-            </button>
-		    </div>
-			<div><button class="contact100-form-btn">
+			</button>
+		   </div>
+		</div>
+		<div>
+			<div>
+				<button class="contact100-form-btn">
                 <span><a href="Mostrat_Prod.php">
                      CONSULTAR PRODUTOS
                     <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
                 </a></span>
-            </button>
-		    </div>
-		<form method="POST" action="pesquisar.php">
-          Pesquisar:<input type="text" name="pesquisar" placeholder="PESQUISAR">
-          <input type="submit" value="ENVIAR">
-        </form>
+                </button>
+			</div>
+		</div>	
+		<div>
+			<div> 
+		    <form method="POST" action="pesquisar.php">
+            Pesquisar:<input type="text" name="pesquisar" placeholder="PESQUISAR">
+            <input type="submit" value="ENVIAR">
+		    </form>
+		   </div>
+        </div>  
+		<div>
+			<div>
+				<button class="contact100-form-btn">
+                <span><a href="Dashboard.php">
+                     VOLTAR
+                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                </a></span>
+                </button>
+			</div>
+		</div>	
+    </div>
 	 
     
     
