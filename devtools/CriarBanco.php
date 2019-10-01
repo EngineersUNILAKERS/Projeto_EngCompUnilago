@@ -55,6 +55,7 @@ if ($conn->query($usuarios) === TRUE) {
 //Criando as tabelas de categorias
 $categorias = "CREATE TABLE CATEGORY (
 	CAT_Id			INT  PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  CAT_Codigo 		INT NOT NULL,
 	CAT_Nome		VARCHAR (50) NOT NULL,
 	CAT_Descricao		VARCHAR (300) NOT NULL,
 	PhotoQuant       	INT NOT NULL,
