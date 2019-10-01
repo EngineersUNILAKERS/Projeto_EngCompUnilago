@@ -47,8 +47,8 @@
 			<li>
 			<a href="Form_Alterar_Prod.php?id=<?php echo $id_prod;?>"><button class="btn btn-warning">Alterar</button></a>	
 			</li>
-			<li><a href="Ativar.php"><button class="btn btn-primary">Ativar</button></a>
-			<a href="Desativar.php"><button class="btn btn-danger">Desativar</button></a>
+			<li><a href="Ativar.php?id=<?php echo $id_prod;?>"><button class="btn btn-primary">Ativar</button></a>
+			<a href="Desativar.php?id=<?php echo $id_prod;?>"><button class="btn btn-danger">Desativar</button></a>
 		    </li>	
 			
 		</div>
