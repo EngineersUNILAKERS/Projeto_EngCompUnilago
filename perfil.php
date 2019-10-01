@@ -5,7 +5,7 @@
 	session_start();
 	$ConsultasBanco = new ConsultasBanco;
 	$ConsultasBanco->verificaAdm($_SESSION['grupo']);
-	$sql = "SELECT * FROM users WHERE Id_Cli='". $id_prod ."'";
+	$sql = "SELECT * FROM users WHERE Email='". $id_prod ."'";
 
 	$result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
 	

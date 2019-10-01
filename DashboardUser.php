@@ -28,17 +28,18 @@
 <body>
 <?php
 		 require('ConsultasSql.php');
+		 session_start();
 		 $ConsultasBanco = new ConsultasBanco;
   		 $categoria = $ConsultasBanco->SelectUsuarios();
 		 foreach($categoria as $lista)
 		  {
-			  $pegaId = $lista['Id_Cli'];
+			  $pegaEmail = $lista['Email'];
 		  }
-		  ?>
+?>
 
 	<div class="container-contact100">
 		
-			<div><a href="perfil.php?id=<?php echo $pegaId;?>"><button class="contact100-form-btn" type="button"></a>
+			<div><a href="perfil.php?id=<?php echo $pegaEmail;?>"><button class="contact100-form-btn" type="button"></a>
 					<span>
 						Perfil
 					</span>
