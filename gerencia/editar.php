@@ -8,14 +8,26 @@
 
 <body>
 <?php
-$id = $_GET['Id_Cli'];
-$sql = mysql_query("select * from users where Id_Cli=$id");
-$separar = mysql_fetch_array($sql);
-$login_old = $separar['Login'];
-$senha_old = $separar['Senha'];
-$email_old = $separar['Email'];
-$foto_old = $separar['Nome'];
-$msg_old = $separar['Group_Id'];
+require('../ConsultasSql.php');
+session_start();
+$ConsultasBanco = new ConsultasBanco;
+$ConsultasBanco->verificaAdm($_SESSION['grupo']);
+$id = $_GET['id'];
+$sql=("SELECT * FROM USERS");
+ $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+
+ while($linha = mysqli_fetch_assoc($result))
+{    
+
+
+$login_old = $linha['Login'];
+$senha_old = $linha['Senha'];
+$email_old = $linha['Email'];
+$foto_old = $linha['Nome'];
+$msg_old = $linha['Grupo_Id'];
+
+}
+
 ?>
 <form action="#" method="post" enctype="multipart/form-data" name="cadastrar">
 <table width="406" border="1">
@@ -37,16 +49,17 @@ $msg_old = $separar['Group_Id'];
    </label></td>
  </tr>
  <tr>
-   <th scope="row">Foto :</th>
+   <th scope="row">Nome :</th>
    <td><label>
      <input type="text" name="Nome" id="Nome"  value="<?php echo $foto_old; ?>"/>
    </label></td>
  </tr>
- <tr>
-   <th colspan="2" valign="top" scope="row">Mensagem 
-     <textarea name="Group_Id" id="Group_Id" cols="45" rows="5"><?php echo $msg_old; ?></textarea></th>
-   </tr>
- <tr>
+ <th scope="row">Grupo ID :</th>
+   <td><label>
+     <input type="text" name="Grupo_Id" id="Grupo_Id"  value="<?php echo $msg_old; ?>"/>
+   </label></td>
+ </tr>
+  <tr>
    <th colspan="2" scope="row"><label>
      Clique aqui para cadastrar
      <input type="submit" name="submit" id="submit" value="Atualizar" />
@@ -55,23 +68,26 @@ $msg_old = $separar['Group_Id'];
 </table>
 
 <?php
+
+
 if(isset($_POST['submit'])==1){
 $login = $_POST['Login'];
 $senha = $_POST['Senha'];
+$senha = md5($senha);
 $email = $_POST['Email'];
-$foto_name =$_POST['Nome']
+$foto_name =$_POST['Nome'];
 //$foto_name = $_FILES['foto']['name'];
 //if($foto_name == ''){
 //$foto_name .= $foto_old;
 //}
 //$caminho = "img/".$foto_name;
 //$foto = $foto_name;
-$msg = $_POST['Group_Id'];
-$sql = mysql_query("
+$msg = $_POST['Grupo_Id'];
 
-update users set `Login` = '$login',`Senha` = $senha , `Nome` = '$foto_name' ,`Email` = '$email' ,`Group_Id` = '$msg' where Id_CLi = $id
-");
 
+$sql=("UPDATE `users` SET `Login` = '$login', `Nome` = '$foto_name', `Email` = '$email', `Senha` = '$senha', `Grupo_Id` = '$msg' WHERE `Id_Cli` = $id");
+ $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+ 
 if($sql == true){
 echo "<script>location.href='gerenciar.php'</script>";
 
@@ -83,5 +99,48 @@ echo "ocorreu um erro ao cadastrar";
 ?>
 
 </form>
+</body>
+</html>
+
+</table>
+
+<div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button type="submit" class="contact100-form-btn">
+						<span>
+                        <a href="../cadastro_gerencia.html">Cadastrar</a>
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							
+						</span>
+					</button>
+				</div>
+			</div>
+
+
+<div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button type="submit" class="contact100-form-btn">
+						<span>
+								<a href="../Dashboard.php">Menu Principal</a>
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							
+						</span>
+					</button>
+				</div>
+			</div>
+<div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button type="submit" class="contact100-form-btn">
+						<span>
+								<a href="menu.php">Menu Posterior</a>
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							
+						</span>
+					</button>
+				</div>
+			</div>
 </body>
 </html>

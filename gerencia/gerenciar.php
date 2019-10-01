@@ -73,7 +73,19 @@ echo "<tr><td>".$id."</td><td>".$login."</td><td>".$nome."</td><td>".$senha."</t
 					<div class="contact100-form-bgbtn"></div>
 					<button type="submit" class="contact100-form-btn">
 						<span>
-								<a href="menu.php">Menu</a>
+								<a href="../Dashboard.php">Menu Principal</a>
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							
+						</span>
+					</button>
+				</div>
+			</div>
+<div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button type="submit" class="contact100-form-btn">
+						<span>
+								<a href="menu.php">Menu Posterior</a>
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 							
 						</span>
