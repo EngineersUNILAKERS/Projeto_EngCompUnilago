@@ -8,12 +8,27 @@
 
 <body>
 <?php
+//Patrick - Aqui eu faço a verificação se o user ta logado, e se ele é adm(precisa de adm pra ver essa pagina)
 require('../ConsultasSql.php');
-session_start();
 $ConsultasBanco = new ConsultasBanco;
-$ConsultasBanco->verificaAdm($_SESSION['grupo']);
+
+session_start();
+
+if($_SESSION['grupo']==2)
+{
+    
+}
+else if($_SESSION['grupo']==1)
+{
+    header('Location:../DashboardUser.php');
+}
+else
+{
+    header('Location:../index.html');
+}
+
 $id = $_GET['id'];
-$sql=("SELECT * FROM USERS");
+$sql=("SELECT * FROM USERS where Id_Cli ='".$id."'");
  $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
 
  while($linha = mysqli_fetch_assoc($result))
@@ -76,12 +91,6 @@ $senha = $_POST['Senha'];
 $senha = md5($senha);
 $email = $_POST['Email'];
 $foto_name =$_POST['Nome'];
-//$foto_name = $_FILES['foto']['name'];
-//if($foto_name == ''){
-//$foto_name .= $foto_old;
-//}
-//$caminho = "img/".$foto_name;
-//$foto = $foto_name;
 $msg = $_POST['Grupo_Id'];
 
 

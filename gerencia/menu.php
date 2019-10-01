@@ -1,9 +1,19 @@
 <?php 
-//Patrick - Aqui eu faço a verificação se o user ta logado, e se ele é adm(precisa de adm pra ver essa pagina)
-require('../ConsultasSql.php');
 session_start();
-$ConsultasBanco = new ConsultasBanco;
-$ConsultasBanco->verificaAdm($_SESSION['grupo']);
+
+if($_SESSION['grupo']==2)
+{
+    
+}
+else if($_SESSION['grupo']==1)
+{
+    header('Location:../DashboardUser.php');
+}
+else
+{
+    header('Location:../index.html');
+}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

@@ -59,7 +59,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 				</div>
 				<div>
 				<button class="contact100-form-btn" type="button">
-					<span><a href="Form_category.php">
+					<span><a href="Form_category.html">
 						CATEGORIA
 					</a></span>
 				</button>

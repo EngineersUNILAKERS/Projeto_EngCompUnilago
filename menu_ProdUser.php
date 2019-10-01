@@ -31,13 +31,7 @@
     <div class="container-contact100">
 	   <div class="wrap-contact100-form-btn">
        
-			<div><button class="contact100-form-btn">
-                <span><a href="Mostrat_Prod.php">
-                     CONSULTAR PRODUTOS
-                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                </a></span>
-            </button>
-		    </div>
+		
 		<form method="POST" action="pesquisar.php">
           Pesquisar:<input type="text" name="pesquisar" placeholder="PESQUISAR">
           <input type="submit" value="ENVIAR">
