@@ -37,7 +37,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 	   <div class="wrap-contact100-form-btn">
             <div class="contact100-form-bgbtn"></div>
             <button class="contact100-form-btn">
-                <span><a href="Form_Products.html">
+                <span><a href="Form_Products.php">
                      CADASTRAR NOVOS PRODUTOS
                     <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
                 </a></span>
