@@ -94,13 +94,13 @@
 						   ?>
 					</div>
 					
-					<div class="form-group" class="label-input100">				
+					<!--<div class="form-group" class="label-input100">				
 					 <label for="PRO_foto">Foto Principal</label>
-					  <input type="file" accept="image/*" class="form-control" required name="Foto" id="Foto1">
+					  <input type="file" accept="image/*" class="form-control" name="Foto" id="Foto1">
 					</div>
 					<div class="form-group">
 					  <img src="upload/<?php echo $exibe_foto; ?>" width="100px" >
-					</div>
+					</div>-->
 
 					<div class="form-group" class="label-input100">
 						<label for="dinheiro">Preço (R$)</label>
