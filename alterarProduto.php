@@ -30,14 +30,12 @@ else {
 	
 }*/
 
-    $sql="UPDATE products SET
-          PRO_Nome = '$recebe_produto',
-	      PRO_Descricao = '$recebe_descricao',
-	      PRO_Categoria_Id = '$recebe_categoria',
-          PRO_Preco = '$recebe_preco',
-	      PRO_Estoque = '$recebe_estoque',
-		  WHERE PRO_Id = '$id_prod'";
-	
+    $sql="UPDATE products SET PRO_Nome = '".$recebe_produto."',
+	      PRO_Descricao = '".$recebe_descricao."',
+	      PRO_Categoria_Id = '".$recebe_categoria."',
+          PRO_Preco = '".$recebe_preco."',
+	      PRO_Estoque = '".$recebe_estoque."'
+		  WHERE PRO_Id = '".$id_prod."'";
    
 	if ($ConsultasBanco->ConectarBanco()->query($sql) === TRUE) {
 		echo 'Produto alterado com sucesso!<br>';
