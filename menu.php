@@ -13,14 +13,27 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 </head>
 
 <body>
-
+<div>
+  <button class="contact100-form-btn">
+      <span><a href="gerencia.php">Gerenciar</a></span>
+  </button>
+</div>
+<div>
+  <button class="contact100-form-btn">
+      <span><a href="cadastro.html">Cadastrar</a></span>
+  </button>
+</div>
+<div>
+  <button class="contact100-form-btn">
+      <span><a href="logout.php">Logout</a></span>
+  </button>
+</div>
+/*
 <ul>
 <li><a href="gerencia.php">Gerenciar</a></li>
-   <li><a href="../cadastro.html">Cadastrar</a></li>
-
-
- <li><a href="logout.php">Logout</a></li>
+<li><a href="cadastro.html">Cadastrar</a></li>
+<li><a href="logout.php">Logout</a></li>
 </ul>
-
+*/
 </body>
 </html>
