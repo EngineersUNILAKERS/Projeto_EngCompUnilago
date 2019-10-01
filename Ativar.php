@@ -5,18 +5,12 @@ require('ConsultasSql.php');
 session_start();
 $ConsultasBanco = new ConsultasBanco;
 $ConsultasBanco->verificaAdm($_SESSION['grupo']);
-$sql = "SELECT * FROM products WHERE PRO_Id='". $id_prod ."'";
-
-$result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
-while($produto = mysqli_fetch_assoc($result))
-	{	
-        $Ativar = $produto['PRO_Ativo'];
-    }
-    
-
-    $sql="UPDATE products SET PRO_Ativo = '".$recebe_produto."',
-
-
-
-
+$sql2="UPDATE products SET PRO_Ativo = '1' WHERE PRO_Id='".$id_prod."'";
+if ($ConsultasBanco->ConectarBanco()->query($sql2) === TRUE) {
+    echo 'Produto ativo com sucesso';
+  }
+  else {
+   echo 'Error: ', $ConsultasBanco->ConectarBanco()->error;
+  }
 ?>
+<a href="Mostrat_Prod.php"><button>VOLTAR</button></a>
