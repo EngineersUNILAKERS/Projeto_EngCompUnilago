@@ -99,7 +99,7 @@
 					  <input type="file" accept="image/*" class="form-control" name="Foto" id="Foto1">
 					</div>
 					<div class="form-group">
-					  <img src="upload/<?php echo $exibe_foto; ?>" width="100px" >
+					  <img src="upload/<?php/* echo $exibe_foto; */?>" width="100px" >
 					</div>-->
 
 					<div class="form-group" class="label-input100">
