@@ -34,7 +34,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 </head>
 <body>
 
-    <form name="Form_email" action="PHPMailer/mail.php" method="post" enctype="multipart/form-data">
+    <form name="Form_email" action="PHP_Mailer/mail.php" method="post" enctype="multipart/form-data">
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 		
