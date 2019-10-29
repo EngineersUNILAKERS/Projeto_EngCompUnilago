@@ -1,12 +1,17 @@
 <?php
 
-$emailuser = $_REQUEST['email'];
 $assunto= $_POST['assunto'];
 $msg= $_POST['msg'];
 
-$Emails = explode(" ", $emailuser);
-$Emails= array_filter($Emails);
-
+if (isset($_POST['todos'])) {
+    $emailuser = $_REQUEST['email'];
+    $Emails = explode(" ", $emailuser);
+    $Emails= array_filter($Emails);
+}
+else
+{
+    $Emails = $_POST['email'];
+}
 
 //Incluir o phpmailer
 require_once("PHPMailerAutoload.php");

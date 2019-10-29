@@ -60,17 +60,18 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 					<span id=codigo class="label-input100">Escolha o Email</span>
 
 					<div class="todos">
-					<select name="email">
+					<select name="email[]" multiple="multiple" size="4">
 						<option value="valor1"selected>Escolha</option> 
 						<?php
 						$emails = $ConsultasBanco->ListaEmail();
 						foreach($emails as $lista)
 						{
 							$email = $lista;
-							echo'<option name="email" value="'.$email.'">'.$email.'</option>';
+							echo'<option name="email" 
+							value="'.$email.'">'.$email.'</option>';
 							$todos .= $email.' ';
 						}
-						echo'<option name="email" value="'.$todos.'">'."Todos".'</option>';
+						echo'<option name="todos" value="'.$todos.'">'."Todos".'</option>';
 						?>
 					  </select>
 					<span class="focus-input100"></span>
