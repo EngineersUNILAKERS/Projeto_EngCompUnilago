@@ -7,7 +7,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 <!DOCTYPE html>
 <html lang="pt-br">
 <head> 
-	<title>Form_Products</title>
+	<title>Erro</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -34,77 +34,31 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 </head>
 <body>
 
-    <form name="Form_email" action="PHP_Mailer/mail.php" method="post" enctype="multipart/form-data">
+    
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 		
 				<span class="contact100-form-title">
-					Disparo de Emails
+					Ocorreu um Erro! Volte para página anterior e verifique os campos de email, endereço, assunto e tente novamente!
 				</span>
-				<div class="wrap-input100 validate-input" data-validate="Escolha ao menos um usuário">
-					<span id=codigo class="label-input100">Escolha o Email</span>
-
-					<div class="todos">
-					<select name="email[]" multiple="multiple" size="11" required>
-						<?php
-						$emails = $ConsultasBanco->ListaEmail();
-						foreach($emails as $lista)
-						{
-							$email = $lista;
-							echo'<option name="email" 
-							value="'.$email.'">'.$email.'</option>';
-							$todos .= $email.' ';
-						}
-						echo'<option name="todos" value="'.$todos.'">'."Todos".'</option>';
-						?>
-					  </select>
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input" data-validate="Assunto é obrigatória">
-					<span id=Nome_Produto class="label-input100">Insira o assunto do email</span>
-				<input class="input100" type="text" name="assunto" placeholder="Assunto" required>
-				<span class="focus-input100"></span>
-				</div>
-
-
-                <div class="wrap-input100 validate-input" data-validate="Mensagem é obrigatória">
-					<span id=Nome_Produto class="label-input100">Insira sua mensagem</span>
-					<textarea class="input100" rows="8" cols="85" name="msg" placeholder="Insira sua mensagem" required></textarea>
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input">
-				
-				
-
+		
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
 						<button class="contact100-form-btn">
-							<span>
-								Enviar
+							<span><a href="Enviar_Email.php">
+								Voltar
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</span>
+							</a></span>
 						</button>
-						
 					</div>
 				</div>
-				</form>
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						
-							<span>
-							<a href="Dashboard.php"><font color="white">Voltar</font></a>
-								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</span>
-						
-						</div>
+			
 		</div>
 	</div>
- 
-						
+
+
+
 	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->

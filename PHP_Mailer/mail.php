@@ -69,6 +69,7 @@ if($mail->send())
 else
 {
     echo "Deu algum erro!";
+    header('Location:../ErroEmail.php');
 }
 
 ?>

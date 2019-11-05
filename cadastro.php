@@ -46,6 +46,7 @@ else{
 	if ($conn->query($sql) === TRUE)
 	{
 		echo 'Usuário cadastrado com sucesso!';
+		echo '<br><br><a href="index.html">Voltar</a>';
 	}
 	else
 	{
