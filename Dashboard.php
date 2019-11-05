@@ -72,6 +72,16 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 					</a></span>
 				</button>
 			</div>
+			<div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button class="contact100-form-btn">
+						<span>
+            				<a href="gerencia/logout.php">LOGOUT</a></li>						
+						</span>
+					</button>
+				</div>
+			</div>  
 	</div>
 
 

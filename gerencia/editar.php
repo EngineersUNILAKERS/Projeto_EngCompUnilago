@@ -144,12 +144,13 @@ echo "ocorreu um erro ao cadastrar";
 					<div class="contact100-form-bgbtn"></div>
 					<button type="submit" class="contact100-form-btn">
 						<span>
-								<a href="menu.php">Menu Posterior</a>
+								<a href="gerenciar.php">Voltar</a>
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 							
 						</span>
 					</button>
 				</div>
 			</div>
+			
 </body>
 </html>
