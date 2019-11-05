@@ -30,4 +30,4 @@ try {
 }
 
 
-?>
+?><a href="menuCategoria.php">Voltar!</a>

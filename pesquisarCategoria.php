@@ -2,23 +2,24 @@
   require('ConsultasSql.php');
   $ConsultasBanco = new ConsultasBanco;
     $pesquisar = $_POST['pesquisar'];
-    $dadopesquisado = $ConsultasBanco->PesquisaProd($pesquisar);
+    $dadopesquisado = $ConsultasBanco->PesquisaCat($pesquisar);
     
     if($dadopesquisado!=NULL || $dadopesquisado!="")
     {
     foreach($dadopesquisado as $lista)
     {
       ?>		 
-      <div><h3><?php echo 'Nome do Produto: ',$lista ['PRO_Nome']?><br></h3></div>
-      <div><h4><?php echo 'Descrição: ',$lista ['PRO_Descricao']?><br></h4></div>
-      <div><h4><?php echo 'R$: ', $lista ['PRO_Preco']?><br></h4></div>
-      <div><h4><?php echo 'Quantidade em Estoque: ',$lista ['PRO_Estoque']?><br></h4></div>
+      <div><h3><?php echo 'Nome da Categoria: ',$lista ['CAT_Nome']?><br></h3></div>
+      <div><h4><?php echo 'Descrição: ',$lista ['CAT_Descricao']?><br></h4></div>
+      <div><h4><?php echo 'Quantidade em Estoque: ',$lista ['MinimumStockLevel']?><br></h4></div>
       <!--<div><h4><?/*php echo 'Foto: ',$lista ['PRO_Foto']*/?><br></h4></div>-->
+      <br><br>
       <?php
+
     }
   }
   else{
-    echo "Não foi encontrado o produto pesquisado!";
+    echo "Não foi encontrado a categoria pesquisado!";
   }
   ?>
-  <a href="menu_Prod.php"><button>Voltar</button></a>
+  <a href="menuCategoria.php"><button>Voltar</button></a>

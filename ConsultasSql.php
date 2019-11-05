@@ -173,6 +173,20 @@ class ConsultasBanco
       }
       return $listaNomes;
     }
+    public function SelectCat()
+    {
+    
+      $ConsultasBanco = new ConsultasBanco;
+
+      $sql=("SELECT * FROM category");
+      $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+
+      while($nome = mysqli_fetch_assoc($result))
+      {      
+      $listaNomes[] = $nome;
+      }
+      return $listaNomes;
+    }
     /*public function MostraImagem($fotoatual){
       
       $ConsultasBanco = new ConsultasBanco;
@@ -193,6 +207,27 @@ class ConsultasBanco
       $ConsultasBanco = new ConsultasBanco;
 
       $sql=("SELECT * FROM products WHERE PRO_Nome LIKE '%$pesquisar%' LIMIT 5");
+      $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+      $verifica = $result->num_rows;
+      
+      if($verifica!=NULL){
+      while($nome = mysqli_fetch_assoc($result))
+      {      
+      $listaNomes[] = $nome;
+      }
+      return $listaNomes;
+      }
+      else{
+        return NULL;
+      }
+
+    }
+    public function PesquisaCat($pesquisar)
+    {
+    
+      $ConsultasBanco = new ConsultasBanco;
+
+      $sql=("SELECT * FROM category WHERE CAT_Nome LIKE '%$pesquisar%' LIMIT 5");
       $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
       $verifica = $result->num_rows;
       
