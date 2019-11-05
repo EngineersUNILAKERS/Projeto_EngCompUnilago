@@ -1,7 +1,13 @@
-﻿<!DOCTYPE html>
+<?php 
+require('ConsultasSql.php');
+session_start();
+$ConsultasBanco = new ConsultasBanco;
+$ConsultasBanco->verificaAdm($_SESSION['grupo']);
+?>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Form_Category</title>
+	<title>Produtos</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -22,82 +28,60 @@
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
 <body>
 
-    <form name="Form_Category" method="post" enctype="multipart/form-data" action="Form_Category.php">
-        
-	<div class="container-contact100">
-		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
-				<span class="contact100-form-title">
-					Cadastre sua Categoria:
-				</span>
-
-				<div class="wrap-input100 validate-input" data-validate="Codigo é obrigatório">
-					<span id=codigo class="label-input100">Código</span>
-					<input class="input100" type="text" name="codigo" placeholder="Insira o Código da Categoria">
-					<span class="focus-input100"></span>
-                </div>
-
-                <div class="wrap-input100 validate-input" data-validate="Nome da Categoria é obrigatório">
-					<span id=Nome_Categoria class="label-input100">Nome do Categoria</span>
-					<input class="input100" type="text" name="Nome_Categoria" placeholder="Insira o Nome do Categoria">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input">
-					<span id=descricao class="label-input100">Descrição</span>
-					<input class="input100" type="text" name="descricao" placeholder="Informe a descrição">
-					<span class="focus-input100"></span>
-				</div>
-                <div class="wrap-input100 validate-input">
-					<span id=Qtd_Fotos class="label-input100">Quantidade de Fotos</span>
-					<input class="input100" type="number" name="Qtd_Fotos" placeholder="Insira a quantidade de fotos">
-					<span class="focus-input100"></span>
-				</div>
-                <div class="wrap-input100 validate-input">
-					<span id=Estoque_Min class="label-input100">Estoque Mínimo</span>
-					<input class="input100" type="number" name="Estoque_Min" placeholder="Insira a quantidade mínima de estoque">
-					<span class="focus-input100"></span>
-				</div>
-				
-
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							<span>
-								Cadastrar
-								<i class="fa fa-plus-square m-l-7"></i>
-							</span>
-						</div>
-					</div>
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							<spam>
-								Pesquisar
-								<i class="fa fa-search m-l-7"></i>
-							</span>
-						</button>
-					</div>
-				</div>
-			</form>
+    <div class="container-contact100">
+	   <div>
+          <div>
+            <button class="contact100-form-btn">
+                <span><a href="Form_category.php">
+                    <font color="white">CADASTRAR NOVA CATEGORIA</font>
+                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                </a></span>
+			</button>
+		   </div>
 		</div>
-	</div>
-    </form>
+		<div>
+			<div>
+				<button class="contact100-form-btn">
+                <span><a href="mostrarCategory.php">
+                     <font color="white">CONSULTAR CATEGORIA</font>
+                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                </a></span>
+                </button>
+			</div>
+		</div>	
+		<div>
+			<div> 
+		    <form method="POST" action="pesquisarCategoria.php">
+            <font color="white">Pesquisar:</font><input type="text" name="pesquisar" placeholder="PESQUISAR">
+            <input type="submit" value="ENVIAR">
+		    </form>
+		   </div>
+        </div>  
+		<div>
+			<div>
+				<button class="contact100-form-btn">
+                <span><a href="Dashboard.php">
+                    <font color="white">VOLTAR</font>
+                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                </a></span>
+                </button>
+			</div>
+		</div>	
+    </div>
+	 
+    
+    
 
 
 	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script> 
 <!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->

@@ -176,9 +176,16 @@ class ConsultasBanco
     /*public function MostraImagem($fotoatual){
       
       $ConsultasBanco = new ConsultasBanco;
-      $sql=("SELECT PRO_Foto FROM products WHERE PRO_Foto = $fotoatual");
+      $sql=("SELECT PRO_Nome_Foto, PRO_Foto, PRO_Foto_Tipo FROM products WHERE PRO_Nome_Foto = '$fotoatual'");
       $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
-      echo $result->PRO_Foto;
+      while($nome = mysqli_fetch_assoc($result))
+      {
+      $ListaFoto[] = $nome;
+      }
+      $result=$ListaFoto['PRO_Foto_Tipo'];
+      header("Content-Type:$result");
+      echo $ListaFoto['Pro_Foto'];
+      
     }*/
     public function PesquisaProd($pesquisar)
     {

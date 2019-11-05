@@ -38,7 +38,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
           <div>
             <button class="contact100-form-btn">
                 <span><a href="Form_Products.php">
-                     CADASTRAR NOVOS PRODUTOS
+					<font color="white">CADASTRAR NOVOS PRODUTOS</font>
                     <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
                 </a></span>
 			</button>
@@ -48,7 +48,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 			<div>
 				<button class="contact100-form-btn">
                 <span><a href="Mostrat_Prod.php">
-                     CONSULTAR PRODUTOS
+					<font color="white">CONSULTAR PRODUTOS</font>
                     <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
                 </a></span>
                 </button>
@@ -57,7 +57,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 		<div>
 			<div> 
 		    <form method="POST" action="pesquisar.php">
-            Pesquisar:<input type="text" name="pesquisar" placeholder="PESQUISAR">
+            <font color="white">Pesquisar:</font><input type="text" name="pesquisar" placeholder="PESQUISAR">
             <input type="submit" value="ENVIAR">
 		    </form>
 		   </div>
@@ -66,7 +66,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 			<div>
 				<button class="contact100-form-btn">
                 <span><a href="Dashboard.php">
-                     VOLTAR
+					<font color="white">VOLTAR</font>
                     <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
                 </a></span>
                 </button>

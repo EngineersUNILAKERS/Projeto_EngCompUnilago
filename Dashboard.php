@@ -41,7 +41,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 			<!-- patrick - A opção de ver usuário é esse trecho de código - trecho gerencia -->
 			<div><button class="contact100-form-btn" type="button">
 					<span><a href="gerencia\menu.php">
-						USUÁRIOS
+					<font color="white">USUÁRIOS</font>
 					</a></span>
 				</button>
 				</div>
@@ -51,7 +51,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 						<div class="contact100-form-bgbtn"></div>
 						<button class="contact100-form-btn">
 							<span><a href="menu_Prod.php">
-								PRODUTOS
+							<font color="white">PRODUTOS</font>
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 							</a></span>
 						</button>
@@ -59,15 +59,15 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 				</div>
 				<div>
 				<button class="contact100-form-btn" type="button">
-					<span><a href="Form_category.html">
-						CATEGORIA
+					<span><a href="menuCategoria.php">
+					<font color="white">CATEGORIA</font>
 					</a></span>
 				</button>
 			</div>
 				<div>
 				<button class="contact100-form-btn" type="button">
 					<span><a href="Enviar_Email.php">
-						EMAIL
+					<font color="white">EMAIL</font>
 						<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 					</a></span>
 				</button>
@@ -77,7 +77,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 					<div class="contact100-form-bgbtn"></div>
 					<button class="contact100-form-btn">
 						<span>
-            				<a href="gerencia/logout.php">LOGOUT</a></li>						
+            				<a href="gerencia/logout.php"><font color="white">LOGOUT</font></a></li>						
 						</span>
 					</button>
 				</div>

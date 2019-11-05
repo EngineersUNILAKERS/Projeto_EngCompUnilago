@@ -5,6 +5,7 @@
 	<title>Produtos</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -38,18 +39,12 @@
 		 foreach($categoria as $lista)
 		  {
 			?>
-
+			<!--<div><h4><?php/* $ConsultasBanco->MostraImagem($lista['PRO_Nome_Foto'])*/?><br></h4></div>-->
 	        <div><h3><?php echo 'Nome do Produto: ',$lista ['PRO_Nome']?><br></h3></div>
 			<div><h4><?php echo 'Descrição: ',$lista ['PRO_Descricao']?><br></h4></div>
 			<div><h4><?php echo 'R$: ', $lista ['PRO_Preco']?><br></h4></div>
 			<div><h4><?php echo 'Quantidade em Estoque: ',$lista ['PRO_Estoque']?><br></h4></div>
-			
-			<div><h4><?php 
-			$result = $lista['PRO_Tipo_Foto'];
-			$foto = $lista['PRO_Foto'];
-			header("Content-Type: $result");
-			echo 'Foto: ',$foto;?><br></h4></div>
-			
+						
 			<?php $verifica = $lista['PRO_Ativo']; 
 			if($verifica== 1)
 			{
