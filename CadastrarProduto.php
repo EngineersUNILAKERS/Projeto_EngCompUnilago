@@ -10,29 +10,40 @@ $recebe_descricao = $_POST['descricao'];
 $recebe_categoria = $_POST['categoria'];
 $recebe_dinheiro = $_POST['dinheiro'];
 $recebe_Qtd_Estoque = $_POST['Qtd_Estoque'];
-$recebe_foto = $_FILES['foto'];
-/*$destino = "upload/";*/
-preg_match("/\.(jpg|jpeg|png){1}$/i",$recebe_foto['name'],$extencao1);
-$img_nome1 = md5(uniqid(time())).".".$extencao1[1];
+$imagem = $_FILES['imagem']['tmp_name'];
+$tamanho = $_FILES['imagem']['size'];
+$tipo = $_FILES['imagem']['type'];
+$nome = $_FILES['imagem']['name'];
+
+if ( $imagem != "none" )
+{
+    $fp = fopen($imagem, "rb");
+    $conteudo = fread($fp, $tamanho);
+    $conteudo = addslashes($conteudo);
+    fclose($fp);
+
+
 
 try {
-	$sql="INSERT INTO products (PRO_Codigo, PRO_Nome, PRO_Descricao, PRO_Categoria_Id , PRO_Foto, PRO_Preco, PRO_Estoque, PRO_Ativo ) 
-	VALUES ('$recebe_codigo', '$recebe_Nome_Produto', '$recebe_descricao', '$recebe_categoria', '$img_nome1', '$recebe_dinheiro', '$recebe_Qtd_Estoque', 1)";
+	$sql="INSERT INTO products (PRO_Codigo, PRO_Nome, PRO_Descricao, PRO_Categoria_Id , PRO_Nome_Foto, PRO_Tamanho_Foto, PRO_Tipo_Foto, PRO_Foto, PRO_Preco, PRO_Estoque, PRO_Ativo ) 
+	VALUES ('$recebe_codigo', '$recebe_Nome_Produto', '$recebe_descricao', '$recebe_categoria','$nome','$tamanho', '$tipo','$conteudo', '$recebe_dinheiro', '$recebe_Qtd_Estoque', 1)";
 	
    
 	if ($ConsultasBanco->ConectarBanco()->query($sql) === TRUE) {
 		echo 'Produto criado com sucesso!<br>';
+		header('Location: menu_Prod.php');
 	  }
 	  else {
 	   echo 'Error: '. $ConsultasBanco->ConectarBanco()->error;
 	  }
-		  
-}catch(PDOException $e) {
+	}			
+catch(PDOException $e) {
 	
 	
 	echo $e->getMessage();
-	
-}
+		
+	}  
 
+}
 
 ?>

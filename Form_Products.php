@@ -78,7 +78,8 @@
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="A foto é obrigatoria">
 					<span id=foto class="label-input100">Foto Produto</span>
-					<input class="input100" type="file" name="foto" required>
+					<input type="hidden" name="MAX_FILE_SIZE" value="99999999"/>
+					<input class="input100" type="file" name="imagem" required>
 					<span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Preço é obrigatorio">
@@ -110,7 +111,7 @@
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 							</span>
 						</button></a>
-						</div>
+					</div>
 				</div>
 			</form>
 		</div>
