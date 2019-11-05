@@ -22,6 +22,7 @@ if(($result) > 0 )
     
 	if ($ConsultasBanco->ConectarBanco()->query($sql) === TRUE) {
 		echo 'Usuario criado com sucesso!<br>';
+	
 	  }
 	  else {
 	   echo 'Error: '. $ConsultasBanco->ConectarBanco()->error;
@@ -30,8 +31,30 @@ if(($result) > 0 )
 
 ?>
 </table>
-<a href="cadastro_gerencia.html">Cadastrar outro Usuario</a>
-<a href="gerencia/menu.php">Voltar ao Menu</a>
+
+<div class="container-contact100-form-btn">
+						<div class="wrap-contact100-form-btn">
+							<div class="contact100-form-bgbtn"></div>
+							<button class="contact100-form-btn">
+								<span>
+									<a href="cadastro_gerencia.html">Cadastrar outro Usuario</a></a></li>
+													
+								</span>
+							</button>
+						</div>
+					</div>
+<div class="container-contact100-form-btn">
+						<div class="wrap-contact100-form-btn">
+							<div class="contact100-form-bgbtn"></div>
+							<button class="contact100-form-btn">
+								<span>
+									
+									<a href="gerencia/gerenciar.php">Voltar</a></a></li>						
+								</span>
+							</button>
+						</div>
+					</div>
+
 
 </body>
 </html>

@@ -1,3 +1,5 @@
+
+
 <?php 
 //Patrick - Aqui eu faço a verificação se o user ta logado, e se ele é adm(precisa de adm pra ver essa pagina)
 require('../ConsultasSql.php');
@@ -99,12 +101,26 @@ echo "<tr><td>".$id."</td><td>".$login."</td><td>".$nome."</td><td>".$senha."</t
 					<div class="contact100-form-bgbtn"></div>
 					<button type="submit" class="contact100-form-btn">
 						<span>
-								<a href="menu.php">Menu Posterior</a>
+								<a href="menu.php">Voltar</a>
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 							
 						</span>
 					</button>
 				</div>
 			</div>
+
+<div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button type="submit" class="contact100-form-btn">
+						<span>
+								<a href="logout.php">Logout</a>
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							
+						</span>
+					</button>
+				</div>
+			</div>
+			
 </body>
 </html>
