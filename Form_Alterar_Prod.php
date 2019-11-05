@@ -99,7 +99,7 @@
 					  <input type="file" accept="image/*" class="form-control" name="Foto" id="Foto1">
 					</div>
 					<div class="form-group">
-					<?php echo '<img src="data:image/jpeg;base64,' . $exibe_foto.'" />'; ?>
+					<?php/* echo '<img src="data:image/jpeg;base64,' . $exibe_foto.'" />';*/ ?>
 					</div>
 
 					<div class="form-group" class="label-input100">
