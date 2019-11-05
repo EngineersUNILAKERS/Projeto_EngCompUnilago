@@ -3,15 +3,22 @@
 $assunto= $_POST['assunto'];
 $msg= $_POST['msg'];
 
-if (isset($_POST['todos'])) {
-    $emailuser = $_REQUEST['email'];
-    $Emails = explode(" ", $emailuser);
-    $Emails= array_filter($Emails);
-}
-else
-{
-    $Emails = $_POST['email'];
-}
+//defazendo o array(caso não seja array isso não fará nada)
+$Emails = implode(" ",$_POST['email']);
+//refazendo o array
+$Emails = explode(" ", $Emails );
+$Emails= array_filter($Emails);
+
+// if (isset($_POST['todos'])) {
+    
+    //não estava entrando nessa condição, pois o nome do form é email e não todos(mesmo a opção selecionado se chamando todos)
+    
+// }
+// else
+// {
+//     $Emails = $_POST['email'];
+    
+// }
 
 //Incluir o phpmailer
 require_once("PHPMailerAutoload.php");

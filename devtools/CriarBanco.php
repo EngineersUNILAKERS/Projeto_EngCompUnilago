@@ -103,9 +103,8 @@ $insertUsers = "INSERT INTO  USERS(Login, Nome, Email, Senha, Grupo_Id)
 VALUES('adm','administrador','ENGCOMPLAKERS@GMAIL.COM','$senhaPadrao',2), 
 
 
-('Geraldo','Geraldo Zafalon','Geraldo@GMAIL.COM','$senhaPadrao',1),
-('Marquinho','Marquinho Pokemon','MarquinhoPokemon@GMAIL.COM','$senhaPadrao',1),
-('Casao','Casagrande','Casagrande@GMAIL.COM','$senhaPadrao',1),
+('Geraldo','Geraldo Zafalon','GeraldinoCenourinha@GMAILL.COM','$senhaPadrao',1),
+('Marquinho','Marquinho Pokemon','MarquinhoPokemon@GMAILL.COM','$senhaPadrao',1),
 ('Enade','Enade Meninao','EnadeMeninao@GMAIL.COM','$senhaPadrao',1),
 ('usuario','USUARIO TESTE','ENG.COMPUTACAOUNILAGO@GMAIL.COM','$senhaPadrao',1)";
 // Retornando a mensagem de sucesso ou erro ao popular a tabela de usuários

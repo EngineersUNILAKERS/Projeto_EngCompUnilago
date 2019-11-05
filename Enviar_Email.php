@@ -60,7 +60,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 					<span id=codigo class="label-input100">Escolha o Email</span>
 
 					<div class="todos">
-					<select name="email[]" multiple="multiple" size="4">
+					<select name="email[]" multiple="multiple" size="11">
 						<option value="valor1"selected>Escolha</option> 
 						<?php
 						$emails = $ConsultasBanco->ListaEmail();
