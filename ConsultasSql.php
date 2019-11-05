@@ -173,17 +173,13 @@ class ConsultasBanco
       }
       return $listaNomes;
     }
-    public function MostraImagem(){
-      <?php
+    /*public function MostraImagem($fotoatual){
+      
       $ConsultasBanco = new ConsultasBanco;
-      $id_imagem = $_GET[‘codigo’];
-      $querySelecionaPorCodigo = "SELECT codigo, 
-      imagem FROM tabela_imagens WHERE codigo = $id_imagem";
-      $resultado = mysql_query($querySelecionaPorCodigo);
-      $imagem = mysql_fetch_object($resultado);
-      Header( "Content-type: image/gif");
-      echo $imagem->imagem;
-    }
+      $sql=("SELECT PRO_Foto FROM products WHERE PRO_Foto = $fotoatual");
+      $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+      echo $result->PRO_Foto;
+    }*/
     public function PesquisaProd($pesquisar)
     {
     

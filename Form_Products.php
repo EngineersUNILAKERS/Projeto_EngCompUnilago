@@ -62,7 +62,7 @@
 				</div>
 				<div class="wrap-input100 validate-input" data-validate="Categoria é obrigatoria">
 					<span id=categoria class="label-input100">Categoria</span>
-					<input class="input100" type="number" name="categoria" min="1" max ="4" placeholder="Informe a Categoria" required>
+					<input class="input100" type="number" name="categoria" min="1" max="4" placeholder="Informe a Categoria" required>
 					<span class="focus-input100"></span>
 					<?php
 						  $sql2 = "SELECT * FROM category";
@@ -72,9 +72,10 @@
 							 $exibe_Nome_Categoria = $categoria['CAT_Nome'];
 							 $exibe_Id = $categoria['CAT_Id'];
 							 echo $exibe_Id, ' - ', $exibe_Nome_Categoria;
-							 ?><br><?php
+							 ?><br>
+							 <?php
 	                        }
-						   ?>	
+						   	?>	
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="A foto é obrigatoria">
 					<span id=foto class="label-input100">Foto Produto</span>

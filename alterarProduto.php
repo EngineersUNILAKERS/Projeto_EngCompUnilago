@@ -39,6 +39,7 @@ else {
    
 	if ($ConsultasBanco->ConectarBanco()->query($sql) === TRUE) {
 		echo 'Produto alterado com sucesso!<br>';
+		
 	  }
 	  else {
 	   echo 'Error: '. $ConsultasBanco->ConectarBanco()->error;
@@ -46,3 +47,4 @@ else {
 
 
 ?>
+<a href="menu_Prod.php">Voltar!</a>

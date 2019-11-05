@@ -31,7 +31,7 @@ try {
    
 	if ($ConsultasBanco->ConectarBanco()->query($sql) === TRUE) {
 		echo 'Produto criado com sucesso!<br>';
-		header('Location: menu_Prod.php');
+		
 	  }
 	  else {
 	   echo 'Error: '. $ConsultasBanco->ConectarBanco()->error;
@@ -46,4 +46,4 @@ catch(PDOException $e) {
 
 }
 
-?>
+?><a href="menu_Prod.php">Voltar!</a>
