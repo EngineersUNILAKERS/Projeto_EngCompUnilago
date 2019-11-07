@@ -25,6 +25,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/products.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -39,7 +40,10 @@
 		 foreach($categoria as $lista)
 		  {
 			?>
-			<!--<div><h4><?php/* $ConsultasBanco->MostraImagem($lista['PRO_Nome_Foto'])*/?><br></h4></div>-->
+			<div> <?php echo '
+				<img class="product" src="data:image/jpeg;base64,'. base64_encode($ConsultasBanco->MostraImagem($lista["PRO_Id"])).'">
+						'; ?>
+			<br></div>
 	        <div><h3><?php echo 'Nome do Produto: ',$lista ['PRO_Nome']?><br></h3></div>
 			<div><h4><?php echo 'Descrição: ',$lista ['PRO_Descricao']?><br></h4></div>
 			<div><h4><?php echo 'R$: ', $lista ['PRO_Preco']?><br></h4></div>

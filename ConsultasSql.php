@@ -187,20 +187,6 @@ class ConsultasBanco
       }
       return $listaNomes;
     }
-    /*public function MostraImagem($fotoatual){
-      
-      $ConsultasBanco = new ConsultasBanco;
-      $sql=("SELECT PRO_Nome_Foto, PRO_Foto, PRO_Foto_Tipo FROM products WHERE PRO_Nome_Foto = '$fotoatual'");
-      $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
-      while($nome = mysqli_fetch_assoc($result))
-      {
-      $ListaFoto[] = $nome;
-      }
-      $result=$ListaFoto['PRO_Foto_Tipo'];
-      header("Content-Type:$result");
-      echo $ListaFoto['Pro_Foto'];
-      
-    }*/
     public function PesquisaProd($pesquisar)
     {
     
@@ -348,5 +334,15 @@ class ConsultasBanco
       return $email;
     } 
    
+    public function MostraImagem($fotoatual){
+      
+      $ConsultasBanco = new ConsultasBanco;
+      $sql=("SELECT PRO_Nome_Foto, PRO_Foto, PRO_Tipo_Foto FROM products WHERE PRO_Id = '$fotoatual'");
+      $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+            
+      $nome = mysqli_fetch_assoc($result);
+
+      return $nome['PRO_Foto'];
+    }
     
 }
