@@ -80,11 +80,12 @@
 						<textarea rows="5" class="form-control" name="Descricao"><?php echo $exibe_descricao; ?></textarea>
 					</div>
 					<div class="form-group" class="label-input100">
-					<span class="label-input100">Categoria</span>
+					<span class="label-input100"><font color="black">Categoria</font></span>
 					<!--<input class="input100" type="number" name="categoria" min="1" max="" placeholder="Informe a Categoria" required>-->
 					<select class="form-control" name="Categoria" size="<?php echo $contador?>" value="<?php echo $pega_categoria;?>" 
 					placeholder="Informe a Categoria" required>
 					<span class="focus-input100"></span>
+					
 					<?php
 						  $sql2 = "SELECT * FROM category";
 						  $result2=mysqli_query($ConsultasBanco->ConectarBanco(),$sql2);
@@ -92,7 +93,7 @@
 	                        {
 							 $exibe_Nome_Categoria = $categoria['CAT_Nome'];
 							 $exibe_Id = $categoria['CAT_Id'];
-							 echo'<option name="email" 
+							 echo'<option name="Categoria" 
 							 value="'.$exibe_Id.'">'.$exibe_Nome_Categoria.'</option>';
 							 /*echo $exibe_Id, ' - ', $exibe_Nome_Categoria;*/
 							 ?><br>
