@@ -157,11 +157,11 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #800000;
-  background: -webkit-linear-gradient(45deg,  #800000, #FA8072);
-  background: -o-linear-gradient(45deg, #800000, #FA8072);
-  background: -moz-linear-gradient(45deg, #800000, #FA8072);
-  background: linear-gradient(45deg, #800000, #FA8072);
+  background: #00dbde;
+  background: -webkit-linear-gradient(45deg,  #aaa, #00b);
+  background: -o-linear-gradient(45deg, #aaa, #00b);
+  background: -moz-linear-gradient(45deg, #aaa , #00b);
+  background: linear-gradient(45deg, #aaa, #00b);
   
 }
 
@@ -177,10 +177,10 @@ iframe {
   align-items: center;
   justify-content: center;
   display: flex;
-  background: -webkit-linear-gradient(45deg,  #aaa, #FA8072);
-  background: -o-linear-gradient(45deg, #aaa, #FA8072);
-  background: -moz-linear-gradient(45deg, #aaa, #FA8072);
-  background: linear-gradient(45deg, #aaa, #FA8072);
+  background: -webkit-linear-gradient(45deg,  #aaa, #00b);
+  background: -o-linear-gradient(45deg, #aaa, #00b);
+  background: -moz-linear-gradient(45deg, #aaa , #00b);
+  background: linear-gradient(45deg, #aaa, #00b);
   padding: 15px;
   width: 100%;
 }
@@ -322,7 +322,7 @@ textarea.input100 {
 
 .cadastrar{
   text-align: center;
-  float: right;
+  float:right;
   width: 30%;
   margin-top: 30px;
   display: inline;
@@ -345,11 +345,11 @@ textarea.input100 {
   z-index: -1;
   width: 300%;
   height: 100%;
-  background: #800000;
-  background: -webkit-linear-gradient(left, #800000, #FA8072, #800000, #FA8072);
-  background: -o-linear-gradient(left, #800000, #FA8072, #800000, #FA8072);
-  background: -moz-linear-gradient(left, #800000, #FA8072, #800000, #FA8072);
-  background: linear-gradient(left, #800000, #FA8072, #800000, #FA8072);
+  background: #aaa;
+  background: -webkit-linear-gradient(left, #aaa, #aaaa, #aaa, #aaaa);
+  background: -o-linear-gradient(left, #aaa, #aaaa, #aaa, #aaaa);
+  background: -moz-linear-gradient(left, #aaa, #aaaa, #aaa, #aaaa);
+  background: linear-gradient(left, #aaa, #aaaa, #aaa, #aaaa);
   top: 0;
   left: -100%;
 

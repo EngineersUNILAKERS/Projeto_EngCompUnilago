@@ -13,4 +13,4 @@ if ($ConsultasBanco->ConectarBanco()->query($sql2) === TRUE) {
    echo 'Error: ', $ConsultasBanco->ConectarBanco()->error;
   }
 ?>
-<a href="Mostrat_Prod.php"><button>VOLTAR</button></a>
+<a href="Mostra_Prod.php"><button>VOLTAR</button></a>

@@ -39,38 +39,46 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 
 	<div class="container-contact100">
 			<!-- patrick - A opção de ver usuário é esse trecho de código - trecho gerencia -->
-			<div><button class="contact100-form-btn" type="button">
+			<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn" type="button">
 					<span><a href="gerencia\menu.php">
 					<font color="white">USUÁRIOS</font>
 					</a></span>
 				</button>
 				</div>
+			</div>
 				<!-- trecho gerencia termina aqui -->
-				<div class="container-contact100-form-btn">
+			<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
 						<button class="contact100-form-btn">
 							<span><a href="menu_Prod.php">
 							<font color="white">PRODUTOS</font>
-								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</a></span>
+								</a></span>
 						</button>
 					</div>
-				</div>
-				<div>
+			</div>
+			<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
 				<button class="contact100-form-btn" type="button">
 					<span><a href="menuCategoria.php">
 					<font color="white">CATEGORIA</font>
 					</a></span>
 				</button>
+					</div>
 			</div>
-				<div>
+			<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
 				<button class="contact100-form-btn" type="button">
 					<span><a href="Enviar_Email.php">
 					<font color="white">EMAIL</font>
-						<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-					</a></span>
+						</a></span>
 				</button>
+					</div>
 			</div>
 			<div class="container-contact100-form-btn">
 				<div class="wrap-contact100-form-btn">

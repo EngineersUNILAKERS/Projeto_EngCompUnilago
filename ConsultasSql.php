@@ -187,6 +187,21 @@ class ConsultasBanco
       }
       return $listaNomes;
     }
+    public function ContaCat()
+    {
+    
+      $ConsultasBanco = new ConsultasBanco;
+
+      $sql=("SELECT * FROM category");
+      $result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
+      $count=0;
+      
+      while($nome = mysqli_fetch_assoc($result))
+      {      
+      $count = $count + 1;
+      }
+      return $count;
+    }
     public function PesquisaProd($pesquisar)
     {
     

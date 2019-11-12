@@ -36,6 +36,7 @@
 	session_start();
 	$ConsultasBanco = new ConsultasBanco;
 	$ConsultasBanco->verificaAdm($_SESSION['grupo']);
+	$contador = $ConsultasBanco->ContaCat();
 	$sql = "SELECT * FROM products WHERE PRO_Id='". $id_prod ."'";
 
 	$result=mysqli_query($ConsultasBanco->ConectarBanco(),$sql);
@@ -43,6 +44,7 @@
 	while($produto = mysqli_fetch_assoc($result))
 	{	
 		$lista = $produto['PRO_Id'];
+		$tipofoto = $produto['PRO_Tipo_Foto'];
 		$exibe_nome = $produto['PRO_Nome'];
 		$exibe_descricao = $produto['PRO_Descricao'];
 		$pega_categoria = $produto['PRO_Categoria_Id'];
@@ -61,8 +63,8 @@
 	?>
 	
 	
-	<div class="container-contact100">
-        <div class="wrap-contact100">
+	<div class="teste">
+        <div >
 							
 				<h2>Alteração de produto</h2>
 				
@@ -77,31 +79,36 @@
 						<label for="Descricao">Descrição</label>
 						<textarea rows="5" class="form-control" name="Descricao"><?php echo $exibe_descricao; ?></textarea>
 					</div>
-
 					<div class="form-group" class="label-input100">
-				
-						<label for="Categoria">Categoria</label>
-						<input type="number" name="Categoria" min="1" max="4" value="<?php echo $pega_categoria;?>"  class="form-control" required id="Categoria">
-						<?php
+					<span class="label-input100">Categoria</span>
+					<!--<input class="input100" type="number" name="categoria" min="1" max="" placeholder="Informe a Categoria" required>-->
+					<select class="form-control" name="Categoria" size="<?php echo $contador?>" value="<?php echo $pega_categoria;?>" 
+					placeholder="Informe a Categoria" required>
+					<span class="focus-input100"></span>
+					<?php
 						  $sql2 = "SELECT * FROM category";
-	                      $result2=mysqli_query($ConsultasBanco->ConectarBanco(),$sql2);
-	                        while($categoria = mysqli_fetch_assoc($result2))
+						  $result2=mysqli_query($ConsultasBanco->ConectarBanco(),$sql2);
+						  while($categoria = mysqli_fetch_assoc($result2))
 	                        {
 							 $exibe_Nome_Categoria = $categoria['CAT_Nome'];
 							 $exibe_Id = $categoria['CAT_Id'];
-							 echo $exibe_Id, ' - ', $exibe_Nome_Categoria;
-							 ?><br><?php
+							 echo'<option name="email" 
+							 value="'.$exibe_Id.'">'.$exibe_Nome_Categoria.'</option>';
+							 /*echo $exibe_Id, ' - ', $exibe_Nome_Categoria;*/
+							 ?><br>
+							 <?php
 	                        }
-						   ?>
+							   ?>
+					</select>
 					</div>
-					
 					<div class="form-group" class="label-input100">				
 					 <label for="PRO_foto">Foto Principal</label>
-					 <input type="file" class="form-control" name="Foto">
-					 <div class="IMG.displayed"> <?php echo '
-					<img class="product" src="data:image/jpeg;base64,'. base64_encode($ConsultasBanco->MostraImagem($lista)).'">
+					 <input type="file" class="form-control" name="Foto" required>
+					 </div>
+					 <div class="container-img"> <?php echo '
+					<img class="product" src="data:'.$tipofoto.';base64,'. base64_encode($ConsultasBanco->MostraImagem($lista)).'">
 						'; ?>
-					<br></div></div>
+					<br></div>
 
 					<div class="form-group" class="label-input100">
 						<label for="dinheiro">Preço (R$)</label>
@@ -111,7 +118,7 @@
 					<div class="form-group" class="label-input100">
 				
 						<label for="Estoque">Quantidade em Estoque</label>
-						<input type="number" min="1" max="99" name="Estoque" value="<?php echo $exibe_estoque;?>"  class="form-control" required id="Produto">
+						<input type="number" min="1" max="99999" name="Estoque" value="<?php echo $exibe_estoque;?>"  class="form-control" required id="Produto">
 					</div>
 					
 						
@@ -123,5 +130,5 @@
 				</button>
 				
 				</form>
-				
-			</div>
+				<a href="menu_Prod.php"><button class="btn btn-secondary">Voltar</button></a><br>
+	</div>

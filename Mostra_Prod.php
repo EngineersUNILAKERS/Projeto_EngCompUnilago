@@ -31,7 +31,7 @@
 <body>
 <div class="teste">
  <div>
- <a href="menu_Prod.php"><button class="btn btn-secondary">Voltar</button></a><br>
+ 
 		 <?php
 		 require('ConsultasSql.php');
 		 $ConsultasBanco = new ConsultasBanco;
@@ -41,7 +41,7 @@
 		  {
 			?>
 			<div class="IMG.displayed"> <?php echo '
-				<img class="product" src="data:image/jpeg;base64,'. base64_encode($ConsultasBanco->MostraImagem($lista["PRO_Id"])).'">
+				<img class="product" src="data:'.$lista["PRO_Tipo_Foto"].';base64,'. base64_encode($ConsultasBanco->MostraImagem($lista["PRO_Id"])).'">
 						'; ?>
 			<br></div>
 	        <div><h3><?php echo 'Nome do Produto: ',$lista ['PRO_Nome']?><br></h3></div>
@@ -64,11 +64,10 @@
 			<div>
 			<li>
 			<a href="Form_Alterar_Prod.php?id=<?php echo $id_prod;?>"><button class="btn btn-warning">Alterar</button></a>	
-			</li>
-			<li><a href="Ativar.php?id=<?php echo $id_prod;?>"><button class="btn btn-primary">Ativar</button></a>
+			<a href="Ativar.php?id=<?php echo $id_prod;?>"><button class="btn btn-primary">Ativar</button></a>
 			<a href="Desativar.php?id=<?php echo $id_prod;?>"><button class="btn btn-danger">Desativar</button></a>
-		    </li>	
-			
+			<a href="menu_Prod.php"><button class="btn btn-secondary">Voltar</button></a><br>
+			</li>
 		</div>
 			<br><br>
 		  <?php }?>

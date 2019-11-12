@@ -32,6 +32,7 @@
 	session_start();
 	$ConsultasBanco = new ConsultasBanco;
 	$ConsultasBanco->verificaAdm($_SESSION['grupo']);
+	$contador = $ConsultasBanco->ContaCat();
 	?>
 
     <form name="Form_Products" method="post" enctype="multipart/form-data" action="CadastrarProduto.php">
@@ -62,20 +63,25 @@
 				</div>
 				<div class="wrap-input100 validate-input" data-validate="Categoria é obrigatoria">
 					<span id=categoria class="label-input100">Categoria</span>
-					<input class="input100" type="number" name="categoria" min="1" max="4" placeholder="Informe a Categoria" required>
+					<!--<input class="input100" type="number" name="categoria" min="1" max="" placeholder="Informe a Categoria" required>-->
+					<select class="form-control" name="categoria" size="<?php echo $contador?>" placeholder="Informe a Categoria" required>
 					<span class="focus-input100"></span>
 					<?php
 						  $sql2 = "SELECT * FROM category";
-	                      $result2=mysqli_query($ConsultasBanco->ConectarBanco(),$sql2);
-	                        while($categoria = mysqli_fetch_assoc($result2))
+						  $result2=mysqli_query($ConsultasBanco->ConectarBanco(),$sql2);
+						  while($categoria = mysqli_fetch_assoc($result2))
 	                        {
 							 $exibe_Nome_Categoria = $categoria['CAT_Nome'];
 							 $exibe_Id = $categoria['CAT_Id'];
-							 echo $exibe_Id, ' - ', $exibe_Nome_Categoria;
+							 echo'<option name="email" 
+							 value="'.$exibe_Id.'">'.$exibe_Nome_Categoria.'</option>';
+							 /*echo $exibe_Id, ' - ', $exibe_Nome_Categoria;*/
 							 ?><br>
 							 <?php
 	                        }
-						   	?>	
+							   ?>
+					</select>		   
+						
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="A foto é obrigatoria">
 					<span id=foto class="label-input100">Foto Produto</span>
@@ -90,7 +96,7 @@
                 </div>
                 <div class="wrap-input100 validate-input">
 					<span id=Qtd_Estoque class="label-input100">Quantidade em Estoque</span>
-					<input class="input100" min="1" max="99" type="number" name="Qtd_Estoque" required>
+					<input class="input100" min="1" max="99999" type="number" name="Qtd_Estoque" required>
 					<span class="focus-input100"></span>
 				</div>
 				
