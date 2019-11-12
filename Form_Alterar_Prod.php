@@ -42,6 +42,7 @@
 	
 	while($produto = mysqli_fetch_assoc($result))
 	{	
+		$lista = $produto['PRO_Id'];
 		$exibe_nome = $produto['PRO_Nome'];
 		$exibe_descricao = $produto['PRO_Descricao'];
 		$pega_categoria = $produto['PRO_Categoria_Id'];
@@ -96,11 +97,11 @@
 					
 					<div class="form-group" class="label-input100">				
 					 <label for="PRO_foto">Foto Principal</label>
-					  <input type="file" accept="image/*" class="form-control" name="Foto" id="Foto1">
-					</div>
-					<div class="form-group">
-					<?php/* echo '<img src="data:image/jpeg;base64,' . $exibe_foto.'" />';*/ ?>
-					</div>
+					 <input type="file" class="form-control" name="Foto">
+					 <div class="IMG.displayed"> <?php echo '
+					<img class="product" src="data:image/jpeg;base64,'. base64_encode($ConsultasBanco->MostraImagem($lista)).'">
+						'; ?>
+					<br></div></div>
 
 					<div class="form-group" class="label-input100">
 						<label for="dinheiro">Preço (R$)</label>

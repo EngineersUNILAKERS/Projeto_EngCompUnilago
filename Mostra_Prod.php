@@ -29,8 +29,8 @@
 <!--===============================================================================================-->
 </head>
 <body>
-<div class="container-contact100">
- <div class="wrap-contact100">
+<div class="teste">
+ <div>
  <a href="menu_Prod.php"><button class="btn btn-secondary">Voltar</button></a><br>
 		 <?php
 		 require('ConsultasSql.php');
@@ -40,7 +40,7 @@
 		 foreach($categoria as $lista)
 		  {
 			?>
-			<div> <?php echo '
+			<div class="IMG.displayed"> <?php echo '
 				<img class="product" src="data:image/jpeg;base64,'. base64_encode($ConsultasBanco->MostraImagem($lista["PRO_Id"])).'">
 						'; ?>
 			<br></div>

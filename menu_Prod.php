@@ -47,7 +47,7 @@ $ConsultasBanco->verificaAdm($_SESSION['grupo']);
 		<div>
 			<div>
 				<button class="contact100-form-btn">
-                <span><a href="Mostrat_Prod.php">
+                <span><a href="Mostra_Prod.php">
 					<font color="white">CONSULTAR PRODUTOS</font>
                     <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
                 </a></span>

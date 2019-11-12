@@ -172,6 +172,30 @@ iframe {
   overflow: hidden;
   padding: 42px 55px 45px 55px;
 }
+.teste{
+  background:#aaa;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background: -webkit-linear-gradient(45deg,  #aaa, #FA8072);
+  background: -o-linear-gradient(45deg, #aaa, #FA8072);
+  background: -moz-linear-gradient(45deg, #aaa, #FA8072);
+  background: linear-gradient(45deg, #aaa, #FA8072);
+  padding: 15px;
+  width: 100%;
+}
+.IMG.displayed {
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center}
+
+.container-img {
+  max-width:50%;
+  max-height:50%;
+  /*width: auto;
+  height: auto;*/
+}
 
 
 /*------------------------------------------------------------------

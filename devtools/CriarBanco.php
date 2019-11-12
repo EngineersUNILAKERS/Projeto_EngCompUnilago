@@ -76,7 +76,7 @@ if ($conn->query($categorias) === TRUE) {
 //Criando as tabelas de produtos
 $produtos = "CREATE TABLE PRODUCTS (
 	PRO_Id			INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	PRO_Codigo 		INT NOT NULL,
+	PRO_Codigo 		VARCHAR (50) NOT NULL,
 	PRO_Nome		VARCHAR (50) NOT NULL,
 	PRO_Descricao		VARCHAR (300) NOT NULL,
 	PRO_Categoria_Id	INT NOT NULL,
